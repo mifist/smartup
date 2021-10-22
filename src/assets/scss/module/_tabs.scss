@@ -1,0 +1,118 @@
+.tab-content-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: calc(100% + 24px);
+  margin-right: -12px;
+  @media screen and (max-width: 769px) {
+    width: calc(100% + 20px);
+    margin-right: -10px;
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.tabs-list {
+  background: #FAFAFA;
+  display: block;
+  width: 100%;
+  &__nav {
+    padding-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0);
+      border-radius: 10px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar {
+      height: 4px;
+      background-color: rgba(0, 0, 0, .07);
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+      background: #ddd;
+    }
+    > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative;
+      min-width: max-content;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      width: 100%;
+      border-bottom: 1px solid #DFDFDF;
+    }
+  }
+  &__nav-item {
+    display: inline-block;
+    cursor: pointer;
+    color: #3a5ea7;
+    padding: 0;
+    padding-right: 30px;
+    transition: all .3s ease-in-out;
+    position: relative;
+    max-width: max-content;
+    @media screen and (max-width: 980px) {
+      padding-right: 20px;
+    }
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      color: rgba(0, 0, 0, 0.5);
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      transition: all .3s ease-in-out;
+      max-width: max-content;
+      position: relative;
+      padding: 10px 0 17px 0;
+      border-bottom: 4px solid transparent;
+      @media screen and (max-width: 980px) {
+        padding: 10px 0 15px 0;
+      }
+    }
+    &.active-tab {
+      a {
+        color: #111111;
+        border-bottom: 4px solid $blue;
+      }
+    }
+  }
+  // body
+  &__body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    .tabs-list__content {
+      display: none;
+      &.active-tab {
+        display: block;
+      }
+    }
+    .load-more {
+      margin: 30px auto;
+    }
+  }
+}
+
+.tabs-loading-content-hidden {
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+}

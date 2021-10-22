@@ -14,6 +14,7 @@ import log           from 'fancy-log';
 import colors        from 'ansi-colors';
 import { dateFormat } from 'date-format-helper';
 import phpcs         from 'gulp-phpcs';
+import fileinclude   from 'gulp-file-include';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -109,8 +110,21 @@ function sass() {
     .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
     .pipe($.if(REVISIONING && PRODUCTION || REVISIONING && DEV, $.rev.manifest()))
-    .pipe(gulp.dest(PATHS.dist + '/assets/css'));
-    //.pipe(browser.reload({ stream: true }));
+    .pipe(gulp.dest(PATHS.dist + '/assets/css'))
+    .pipe(browser.reload({ stream: true }));
+}
+
+// Compile HTML template part file to one file
+function compileHtml() {
+  return gulp.src([
+    PATHS.htmlAssets
+  ])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(PATHS.dist))
+    .pipe(browser.reload({ stream: true }));
 }
 
 // Combine JavaScript into one file
@@ -267,12 +281,13 @@ function watch() {
   gulp.watch('**/*.php')
     .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
     .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
+  gulp.watch('**/*.html', compileHtml);
   gulp.watch('src/assets/images/**/*', gulp.series(images));
 }
 
 // Build the "dist" folder by running all of the below tasks
 gulp.task('build',
-  gulp.series(clean, gulp.parallel(sass, 'webpack:build', images, copy)));
+  gulp.series(clean, gulp.parallel(sass, compileHtml, 'webpack:build', images, copy)));
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default',

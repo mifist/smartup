@@ -17,6 +17,10 @@ REVISIONING: false
 PATHS:
   # Path to dist folder
   dist: "dist"
+  # Path to pages folder
+  distPage: "pages"
+  # Path to html files folder
+  htmlAssets: "src/pages/*.html"
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"

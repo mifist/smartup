@@ -49,8 +49,9 @@
    * */
   window.addEventListener("load", () => {
     let preloaderGroup = document.getElementById("preloaderGroup");
-    console.log(preloaderGroup);
-    if ( preloaderGroup ) {
+
+    if ( preloaderGroup && preloaderGroup.length > 0 ) {
+      console.log(preloaderGroup);
       preloaderGroup.classList.add("vanish");
       setTimeout(() => {
         preloaderGroup.style.display = "none";

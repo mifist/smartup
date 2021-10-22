@@ -1,4 +1,4 @@
-# DesignDev
+# Smart Up
 
 <h2 style="margin-bottom: 35px;">List of Pages</h2>
 

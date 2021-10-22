@@ -1,0 +1,53 @@
+/*
+* Features banner
+*/
+.features-banner {
+  width: 100%;
+  display: block;
+  .container {
+    .column {
+      &.left-side {}
+      &.right-side {}
+    }
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: 0.692308px;
+    margin-bottom: 16px;
+    @media screen and (max-width: 480px) {
+      margin-bottom: 30px;
+    }
+  }
+  &__sub-title {
+    color: #111111;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.461538px;
+    margin-bottom: 16px;
+    @media screen and (max-width: 480px) {
+      margin-bottom: 30px;
+    }
+  }
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-height: 268px;
+    min-height: 268px;
+    @media screen and (max-width: 480px) {
+      justify-content: center;
+    }
+    img {
+      object-fit: contain;
+      display: block;
+      max-height: inherit;
+      min-height: inherit;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

@@ -10,5 +10,6 @@ import './lib/fancybox';
 import './lib/jquery.sticky-kit.min';
 
 // other
-import './components/custom';
 import './components/sticky-aside';
+import './components/tabs';
+import './components/custom';
