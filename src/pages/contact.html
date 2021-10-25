@@ -1,0 +1,37 @@
+@@include('./_includes/global/_head.html')
+<main class="contact-page">
+
+	<div class="contact-section">
+		<div class="container">
+			<div class="column">
+
+				<div class="contact-form-wrapper">
+					<h1 class="section-title">Contactez-nous</h1>
+					<p class="section-description">Merci de complter le formulaire ci-dessous.
+						<br />Nous vous répondrons dès que possible. </p>
+					<form id="contact-form" action="/" method="post" class="su-form" >
+						<div class="su-form__field">
+							<label for="contact_email">Email</label>
+							<input type="email" name="contact_email" id="contact_email" required>
+						</div>
+						<div class="su-form__field">
+							<label for="contact_message">Message</label>
+							<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
+						</div>
+						<div class="su-form__footer">
+							 <button type="submit">ENVOYER</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+
+			<div class="column side-image">
+				<img src="assets/images/contact.png" alt="Contact Image Description" />
+			</div>
+
+		</div>
+	</div>
+
+</main>
+@@include('./_includes/global/_footer.html')

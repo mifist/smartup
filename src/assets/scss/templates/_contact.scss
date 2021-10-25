@@ -1,0 +1,52 @@
+$footer-height: 216px;
+.contact-page {
+  min-height: calc(100vh - #{$footer-height});
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact-section {
+  .column {
+    @media screen and (max-width: 980px) {
+      flex: 1 0 100%;
+      width: 100%;
+    }
+  }
+  .side-image {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    max-width: 675px;
+    width: 100%;
+    @media screen and (max-width: 1210px) {
+      position: relative;
+    }
+    @media screen and (max-width: 980px) {
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 480px) {
+      padding-left: 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+.contact-form-wrapper {
+  background: #FFFFFF;
+  border: 1px solid #DFDFDF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 32px;
+  max-width: 492px;
+  width: 100%;
+  @media screen and (max-width: 980px) {
+    margin: 50px auto;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 20px;
+  }
+}

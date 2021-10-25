@@ -5,6 +5,7 @@ footer.main-footer {
 	align-items: flex-start;
 	justify-content: stretch;
 	flex-direction: row;
+  background: #fff;
   @media screen and (max-width: 980px) {
     padding-top: 32px;
     padding-bottom: 10px;
@@ -25,7 +26,7 @@ footer.main-footer {
   padding-right: 4%;
   margin-bottom: 20px;
   min-width: 200px;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 480px) {
     padding-right: 0;
     min-width: initial;
     width: 100%;
@@ -45,7 +46,7 @@ footer.main-footer {
   color: $color-grey;
   max-width: 250px;
   width: 100%;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 480px) {
     max-width: 100%;
   }
   &__logo {
@@ -105,7 +106,7 @@ footer.main-footer {
   flex: 0 1 auto;
   padding: 0;
   min-width: min-content;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 480px) {
     flex: 1 0 100%;
   }
 }
@@ -117,7 +118,7 @@ footer.main-footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 480px) {
     margin: 0 auto;
   }
   li {
@@ -132,7 +133,7 @@ footer.main-footer {
       max-width: 20px;
       max-height: 20px;
       width: max-content;
-      @media screen and (max-width: 440px) {
+      @media screen and (max-width: 480px) {
         max-width: 32px;
         max-height: 32px;
       }

@@ -21,10 +21,23 @@
   }
 }
 
+.square-button {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.359402);
+  border-radius: 3px;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.274286px;
+}
+
 .header-button {
   margin-left: auto;
   margin-right: 0;
   padding: 10px 21px;
+  white-space: nowrap;
 }
 
 .bordered-button {

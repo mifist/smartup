@@ -50,12 +50,12 @@
   window.addEventListener("load", () => {
     let preloaderGroup = document.getElementById("preloaderGroup");
 
-    if ( preloaderGroup && preloaderGroup.length > 0 ) {
+    if ( preloaderGroup ) {
       console.log(preloaderGroup);
       preloaderGroup.classList.add("vanish");
       setTimeout(() => {
         preloaderGroup.style.display = "none";
-      }, 2000);
+      }, 500);
     }
   });
   // END - Preloader

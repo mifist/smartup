@@ -1,0 +1,25 @@
+.about-section {
+  padding: 50px 0;
+  p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+    margin-top: 0;
+    + p {
+      margin-bottom: 1em;
+    }
+    > strong, b {
+      font-weight: 600;
+    }
+  }
+  strong, b {
+    font-weight: 700;
+    color: #333333;
+  }
+  .button {
+    font-weight: 500;
+    font-size: 11px;
+    margin-top: 32px;
+  }
+}

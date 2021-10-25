@@ -5,6 +5,7 @@
 // global
 @import "global/fonts";
 @import "global/colors";
+@import "global/forms";
 @import "global/general";
 
 // module
@@ -14,6 +15,13 @@
 @import "module/banner";
 @import "module/tabs";
 @import "module/tab-card";
+@import "module/resources-card";
+
+// templates
+@import "templates/resources";
+@import "templates/payment";
+@import "templates/about";
+@import "templates/contact";
 
 
 

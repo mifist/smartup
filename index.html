@@ -9,6 +9,40 @@
 	<!--load main custom styles -->
 	<link rel="stylesheet" href="dist/assets/css/main.css">
 
+	<style>
+		.index-menu {
+			display: block;
+			margin: 5%;
+			list-style: none;
+			border-radius: 7px;
+			background: #fff;
+			box-shadow: 0 0 8px rgba(214, 214, 214, 0.78);
+			padding: 0 20px;
+			min-width: max-content;
+			max-width: max-content;
+		}
+		.index-menu > li {
+			padding: 0;
+			line-height: 1;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			border-bottom: 1px solid rgba(215, 215, 215, 0.17);
+		}
+		.index-menu li a {
+			font-size: 18px;
+			line-height: 1.4;
+			padding: 15px 25px 16px 10px;
+			text-decoration: none;
+			color: #111111;
+			transition: all .2s ease-out;
+			display: block;
+		}
+		.index-menu li a:hover {
+			color: #0076DF;
+		}
+	</style>
+
 </head>
 <body>
 
@@ -24,8 +58,13 @@
 
 <main>
 
-	 <ul>
-	     <li><a href="dist/home.html">Home</a></li>
+	 <ul class="index-menu">
+		 <li><a href="dist/home.html">Home</a> <span class="tag-label">ready for QA</span></li>
+     <li><a href="dist/mes-resources.html">Mes resources</a> <span class="tag-label">ready for QA</span></li>
+     <li><a href="dist/mes-resources-detail.html">Mes resource Detail</a></li>
+     <li><a href="dist/mes-resources-paiement.html">Mes resource Paiement</a> <span class="tag-label">ready for QA</span></li>
+     <li><a href="dist/a-propos.html">A propos</a> <span class="tag-label">ready for QA</span></li>
+     <li><a href="dist/contact.html">Contact</a> <span class="tag-label">ready for QA</span></li>
 	 </ul>
 
 
