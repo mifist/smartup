@@ -27,9 +27,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: flex-start;
+			flex-wrap: wrap;
 			border-bottom: 1px solid rgba(215, 215, 215, 0.17);
 		}
-		.index-menu li a {
+		.index-menu li a,
+		.index-menu li > span {
 			font-size: 18px;
 			line-height: 1.4;
 			padding: 15px 25px 16px 10px;
@@ -37,6 +39,12 @@
 			color: #111111;
 			transition: all .2s ease-out;
 			display: block;
+		}
+		.index-menu li > span {
+			width: 100%;
+		}
+		.index-menu li .sub-menu-label {
+			width: 100%;
 		}
 		.index-menu li a:hover {
 			color: #0076DF;
@@ -63,8 +71,23 @@
      <li><a href="dist/mes-resources.html">Mes resources</a> <span class="tag-label">ready for QA</span></li>
      <li><a href="dist/mes-resources-detail.html">Mes resource Detail</a></li>
      <li><a href="dist/mes-resources-paiement.html">Mes resource Paiement</a> <span class="tag-label">ready for QA</span></li>
+		 <li><a href="#">Resource 'COCNCOURS' Modal</a></li>
+		 <li><a href="#">Coupon value page</a></li>
      <li><a href="dist/a-propos.html">A propos</a> <span class="tag-label">ready for QA</span></li>
      <li><a href="dist/contact.html">Contact</a> <span class="tag-label">ready for QA</span></li>
+		 <li><a href="#">S'inscrire</a></li>
+		 <li><a href="#">Se connecter</a></li>
+		 <li> <a class="sub-menu-label" href="#">Mon compte:</a>
+			 <ul>
+				 <li><a href="#">Tab - Modifier mon profil</a></li>
+				 <li><a href="#">Tab - Mot de passe</a></li>
+				 <li><a href="#">Tab - Informations de paiement </a></li>
+				 <li><a href="#">Tab - Informations de paiement (Modifier)</a></li>
+				 <li><a href="#">Tab - Mes crédits</a></li>
+				 <li><a href="#">Facture 'BELGIQUE'</a></li>
+				 <li><a href="#">Facture 'AUTRES'</a></li>
+			 </ul>
+		 </li>
 	 </ul>
 
 
