@@ -72,3 +72,87 @@
     }
   }
 }
+
+
+a.link {
+  max-width: max-content;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration-line: underline;
+  color: $blue;
+  opacity: 1;
+  transition: all .3s;
+  &.right {
+    margin-left: auto;
+  }
+  &.left {
+    margin-right: auto;
+  }
+  &.center {
+    margin: 0 auto;
+  }
+  &.link-gary {
+    color: #3B374D;
+  }
+  &:hover,
+  &:focus {
+    opacity: .75;
+  }
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 42px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 6px 10px;
+  color: #393939;
+  + .social-button {
+    margin-top: 12px;
+  }
+  .icon {
+    position: absolute;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  .text {
+    color: inherit;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &.facebook {
+    background: #3667B8;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: #fff;
+    .icon {
+      width: 30px;
+      height: 30px;
+      left: 10px;
+    }
+  }
+}

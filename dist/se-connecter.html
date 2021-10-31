@@ -23,83 +23,76 @@
 <!-- Preloader END -->
 
 
-<main>
-	<header class="main-header">
-	<div class="container">
-		<div class="column left-side">
-			<a id="logo" href="/"><img src="assets/images/logo-big.svg" alt="SmartUp" /></a>
-		</div>
-		<div class="column right-side">
-			<a href="/" class="button header-button">Se connecter</a>
-		</div>
-	</div>
+<main class="full-with-template">
+
+	<div class="full-with-aside">
+		<header class="main-header">
+	<a id="logo" href="/"><img src="assets/images/logo-big-white.svg" alt="SmartUp" /></a>
 </header>
 
 
-	<div class="features-banner">
-	<div class="container">
-		<div class="column left-side">
-			<h1 class="features-banner__title">title</h1>
-		</div>
+		<div class="aside-banner">
+
+	<h3 class="aside-banner__title">Trouvez des ressources inspirantes
+		pour développer vos compétences et vos projets.</h3>
+
+	<div class="aside-banner__image">
+		<img src="assets/images/space_drqu.svg" alt="Trouvez des ressources inspirantes
+		pour développer vos compétences et vos projets." />
 	</div>
+
 </div>
 
+	</div>
 
-	<!--// page code here-->
+	<div class="full-width-content">
 
+		<a href="/s-inscrire.html" class="link top-link right">Pas encore inscrit ? Inscrivez-vous</a>
+
+		<div class="login-block">
+			<h1 class="page-title">Se connecter</h1>
+
+			<div class="social-buttons">
+				<a href="#" class="social-button google">
+					<span class="icon"><img src="assets/images/google-icon.svg" alt="Google" /></span>
+					<span class="text">S’inscrire avec Google</span>
+				</a>
+				<a href="#" class="social-button facebook">
+					<span class="icon"><img src="assets/images/flogo.svg" alt="Facebook" /></span>
+					<span class="text">S’inscrire avec Facebook</span>
+				</a>
+			</div>
+
+			<div class="text-separator"><span class="text">Ou</span></div>
+
+
+			<form id="login-form" action="/" method="post" class="su-form" >
+				<div class="su-form__field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+				<div class="su-form__field password">
+					<label for="password">Mot de passe</label>
+					<div class="password-field">
+						<input type="password" name="password" id="password" autocomplete="off" required pattern=".{6,}" />
+						<span class="toggle-password"><img src="assets/images/eye.svg" alt="Show/Hide" /></span>
+					</div>
+
+				</div>
+				<div class="su-form__footer">
+					<p>En cliquant sur le bouton “Commencer”,
+						vous acceptez <a href="#" class="link">les Conditions d’utilisation</a>. </p>
+					<button type="submit">COMMENCER</button>
+				</div>
+			</form>
+
+		</div>
+
+
+
+	</div>
 
 </main>
-<footer class="main-footer">
-	<div class="container">
-		<div class="footer-column footer-text-widget">
-			<div class="disclaimer">
-				<div class="disclaimer__logo">
-					<a id="logo-footer" href="/"><img src="assets/images/logo-label.svg" alt="SmartUp" /></a>
-				</div>
-				<p class="disclaimer__text">Un site Internet qui propose des ressources pour développer vos compétences et vos projets.</p>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contenus</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Proposer un contenu</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">A propos</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">A propos de BizzTuto</a></li>
-					<li><a href="#">Termes & Conditions</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contact</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Questions fréquentes</a></li>
-					<li><a href="#">Contactez-nous</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-social-widget">
-			<ul class="footer-social">
-				<!--<li><a href="https://twitter.com/">
-					<img src="assets/images/twitter.svg" alt="Twitter">
-				</a></li>-->
-				<li><a href="https://www.facebook.com/" class="facebook">
-					<img src="assets/images/fb.svg" alt="Facebook">
-				</a></li>
-				<li><a href="https://www.instagram.com/" class="instagram">
-					<img src="assets/images/inst.png" alt="Instagram">
-				</a></li>
-			</ul>
-		</div>
-	</div>
-</footer>
 
 <!-- jQuery Core -->
 <script
@@ -114,4 +107,6 @@
 
 </body>
 </html>
+
+
 

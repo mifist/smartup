@@ -23,83 +23,154 @@
 <!-- Preloader END -->
 
 
-<main>
+<main class="facture-page">
 	<header class="main-header">
 	<div class="container">
 		<div class="column left-side">
 			<a id="logo" href="/"><img src="assets/images/logo-big.svg" alt="SmartUp" /></a>
 		</div>
 		<div class="column right-side">
-			<a href="/" class="button header-button">Se connecter</a>
+			<a href="/" class="button header-button hide-on-mobile">Mes ressources</a>
+			<div class="user-area">
+				<div class="user-info">
+					<div class="user-avtar">
+						<img src="assets/images/user.png" alt="User"/>
+					</div>
+					<div class="user-name">Jérémy</div>
+					<span class="curret"></span>
+				</div>
+				<ul class="user-dropdown">
+					<li><a href="#">Mon profil</a></li>
+					<li class="hide-on-desktop"><a href="#">Mes ressources</a></li>
+					<li><a href="#">Mes produits</a></li>
+					<li><a href="#">Deconnexion</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </header>
 
 
-	<div class="features-banner">
+	<div class="features-banner facture-banner">
 	<div class="container">
-		<div class="column left-side">
-			<h1 class="features-banner__title">title</h1>
+
+		<div class="facture-banner-wrapper">
+			<div class="column left-side">
+				<div class="facture-logo">
+					<a class="logo" href="/"><img src="assets/images/logo.svg" alt="SmartUp" /></a>
+					<h1 class="features-banner__title">Facture</h1>
+				</div>
+
+			</div>
+			<div class="column right-side">
+				<ul class="facture-action">
+					<li><a href="#" class="link link-gary">Imprimer</a></li>
+					<li><a href="#" class="link link-gary">Télécharger PDF</a></li>
+				</ul>
+			</div>
 		</div>
+
 	</div>
 </div>
 
 
-	<!--// page code here-->
+	<div class="facture-section">
+		<div class="container">
 
+			<div class="facture-wrapper">
+				<div class="container">
+					<div class="column left-side">
 
-</main>
-<footer class="main-footer">
-	<div class="container">
-		<div class="footer-column footer-text-widget">
-			<div class="disclaimer">
-				<div class="disclaimer__logo">
-					<a id="logo-footer" href="/"><img src="assets/images/logo-label.svg" alt="SmartUp" /></a>
+						<div class="card-info main">
+							<h3 class="title main">ACTNOW SRL</h3>
+							<div class="text">
+								<p>
+									73 chaussée de watermael, bte 5 <br />
+									1160 Auderghem    <br />
+									BELGIQUE     <br />
+									BE0811.870.501    <br />
+								</p>
+							</div>
+						</div>
+
+					</div>
 				</div>
-				<p class="disclaimer__text">Un site Internet qui propose des ressources pour développer vos compétences et vos projets.</p>
+				<div class="container">
+					<div class="column left-side">
+
+						<div class="card-info-table">
+							<h3 class="title">ID FACTURE</h3>
+							<div class="text">
+								<p>13b1e209-2858-4d5c-8dc4-4f14d8763ecc</p>
+							</div>
+						</div>
+
+						<div class="card-info-table">
+							<h3 class="title">DATE d’achat</h3>
+							<div class="text">
+								<p>13 Septembre 2022</p>
+							</div>
+						</div>
+
+					</div>
+					<div class="column right-side">
+
+						<div class="card-info-table">
+							<h3 class="title">Adresse de facturation</h3>
+							<div class="text">
+								<p>
+									ATP Utul  <br />
+									1, Route de l’Ambassadrice   <br />
+									5112 Paris    <br />
+									FRANCE   <br />
+									FR811.999.770    <br />
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<table class="facture-table">
+					<caption>Détails de la facture</caption>
+					<thead>
+					<tr>
+						<th scope="col">Produit</th>
+						<th class="small" scope="col"></th>
+						<th class="small" scope="col">Details</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td data-label="Produit">Réaliser un Model Canvas - Eition 2021</td>
+						<td class="name" data-label="">Sous total</td>
+						<td class="value" data-label="Details">38,02 €</td>
+					</tr>
+
+					</tbody>
+				</table>
+
+				<table class="facture-table-price">
+					<tbody>
+					<tr>
+						<td class="name">Coupon</td>
+						<td class="value">00,00 €</td>
+					</tr>
+					<tr>
+						<td class="name total">Total</td>
+						<td class="value total">46,00 €</td>
+					</tr>
+					</tbody>
+				</table>
+
+				<p>« Autoliquidation Art 39 bis – livraison intracommunautaire »</p>
+
 			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contenus</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Proposer un contenu</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">A propos</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">A propos de BizzTuto</a></li>
-					<li><a href="#">Termes & Conditions</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contact</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Questions fréquentes</a></li>
-					<li><a href="#">Contactez-nous</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-social-widget">
-			<ul class="footer-social">
-				<!--<li><a href="https://twitter.com/">
-					<img src="assets/images/twitter.svg" alt="Twitter">
-				</a></li>-->
-				<li><a href="https://www.facebook.com/" class="facebook">
-					<img src="assets/images/fb.svg" alt="Facebook">
-				</a></li>
-				<li><a href="https://www.instagram.com/" class="instagram">
-					<img src="assets/images/inst.png" alt="Instagram">
-				</a></li>
-			</ul>
+
 		</div>
 	</div>
-</footer>
+
+</main>
 
 <!-- jQuery Core -->
 <script

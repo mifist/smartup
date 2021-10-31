@@ -1,0 +1,60 @@
+@@include('./_includes/global/_head.html')
+<main class="full-with-template">
+
+	<div class="full-with-aside">
+		@@include('./_includes/global/_header-aside.html')
+
+		@@include('./_includes/modules/_banner-aside.html')
+	</div>
+
+	<div class="full-width-content">
+
+		<a href="/se-connecter.html" class="link top-link right">Déjà un compte ? Se connecter</a>
+
+		<div class="login-block">
+			<h1 class="page-title">S’inscrire</h1>
+
+			<div class="social-buttons">
+				<a href="#" class="social-button google">
+					<span class="icon"><img src="assets/images/google-icon.svg" alt="Google" /></span>
+					<span class="text">S’inscrire avec Google</span>
+				</a>
+				<a href="#" class="social-button facebook">
+					<span class="icon"><img src="assets/images/flogo.svg" alt="Facebook" /></span>
+					<span class="text">S’inscrire avec Facebook</span>
+				</a>
+			</div>
+
+			<div class="text-separator"><span class="text">Ou</span></div>
+
+
+			<form id="login-form" action="/" method="post" class="su-form" >
+				<div class="su-form__field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+				<div class="su-form__field password">
+					<label for="password">Mot de passe</label>
+					<div class="password-field">
+						<input type="password" name="password" id="password" autocomplete="off" required pattern=".{6,}" />
+						<span class="toggle-password"><img src="assets/images/eye.svg" alt="Show/Hide" /></span>
+					</div>
+
+				</div>
+				<div class="su-form__footer">
+					<p>En cliquant sur le bouton “Commencer”,
+						vous acceptez <a href="#" class="link">les Conditions d’utilisation</a>. </p>
+					<button type="submit">COMMENCER</button>
+				</div>
+			</form>
+
+		</div>
+
+
+
+	</div>
+
+</main>
+@@include('./_includes/global/_footer-core.html')
+
+

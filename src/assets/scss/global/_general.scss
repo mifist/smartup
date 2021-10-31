@@ -308,3 +308,43 @@ a {
     letter-spacing: inherit;
   }
 }
+
+
+.text-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+  background: #ffffff;
+  position: relative;
+  z-index: 1;
+  margin: 32px auto;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    left: 0;
+    right: 0;
+  }
+  .text {
+    color: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+    background: #fff;
+    padding: 0 11px;
+    position: relative;
+    z-index: 2;
+  }
+}

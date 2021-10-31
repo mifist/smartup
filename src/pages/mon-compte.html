@@ -1,10 +1,59 @@
 @@include('./_includes/global/_head.html')
-<main>
-	@@include('./_includes/global/_header.html')
+<main class="my-profile">
+	@@include('./_includes/global/_header-user.html')
 
-	@@include('./_includes/modules/_banner-simple.html')
+	@@include('./_includes/modules/_banner-profile.html')
 
-	<!--// page code here-->
+	<div class="tabs-list">
+		<form id="profile-form" action="/" method="post" class="profile-form" >
+			<div class="container">
+				<div class="tabs-list__nav">
+					<ul>
+						<li class="tabs-list__nav-item active-tab">
+							<a href="#" data-id="profile">Modifier mon profil</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="password">Mot de passe</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="paiement">Informations de paiement</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="credits">Mes crédits</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="tabs-list__body">
+
+					<div data-id="profile" class="tabs-list__content active-tab">
+						<div class="tab-content-container">
+							@@include('./_includes/parts/_profile.html')
+						</div>
+					</div>
+
+					<div data-id="password" class="tabs-list__content">
+						<div class="tab-content-container">
+							@@include('./_includes/parts/_password.html')
+						</div>
+					</div>
+
+					<div data-id="paiement" class="tabs-list__content">
+						<div class="tab-content-container">
+							@@include('./_includes/parts/_paiement.html')
+						</div>
+					</div>
+
+					<div data-id="credits" class="tabs-list__content">
+						<div class="tab-content-container">
+							@@include('./_includes/parts/_credits.html')
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
 
 
 </main>

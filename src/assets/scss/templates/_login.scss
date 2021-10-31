@@ -1,0 +1,26 @@
+.login-block {
+  max-width: 360px;
+  width: 100%;
+  margin: 35px auto;
+  margin-left: 20%;
+  margin-top: 20%;
+  @media screen and (max-width: 980px) {
+    margin: 20% auto 0 auto;
+  }
+  @media screen and (max-width: 580px) {
+    margin: 35px auto;
+  }
+}
+.social-buttons {
+  display: block;
+  width: 100%;
+}
+
+
+#login-form {
+  .su-form__footer [type="submit"] {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

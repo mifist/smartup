@@ -6,6 +6,7 @@
 @import "global/fonts";
 @import "global/colors";
 @import "global/forms";
+@import "global/table";
 @import "global/general";
 
 // module
@@ -18,10 +19,14 @@
 @import "module/resources-card";
 
 // templates
+@import "templates/full-width";
 @import "templates/resources";
 @import "templates/payment";
 @import "templates/about";
 @import "templates/contact";
+@import "templates/login";
+@import "templates/facture";
+@import "templates/profile";
 
 
 

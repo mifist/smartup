@@ -1,6 +1,7 @@
 (function ($) {
     'use_strict';
 
+  let doc = $(document);
 
     $.fn.equalHeight = function () {
         let tallest = 0;
@@ -33,16 +34,6 @@
 
     var url_vars = getUrlVars();
 
-    let wpml_flag_letters = () => {
-        if ($(document).find('li.wpml-ls-item').length > 0) {
-            $(document).find('li.wpml-ls-item').each(function (e) {
-                let lang = $(this).find('a > .wpml-ls-flag').attr('alt');
-                $(this).find('a .wpml-ls-flag').after('<span>' + lang + '</span>');
-                $(this).find('a span:nth-of-type(2)').hide();
-            });
-        }
-    };
-
 
   /**
    * Preloader
@@ -63,8 +54,25 @@
 
     $(document).ready(function () {
 
-        if (navigator.userAgent.indexOf('Mac') > 0)
-            $('body').addClass('mac-os');
+ /*       if (navigator.userAgent.indexOf('Mac') > 0)
+            $('body').addClass('mac-os');*/
+
+        // Show/Hide password in the forms
+      $(document).find(".toggle-password").click((e) => {
+        e.preventDefault();
+        console.log('Show/Hide password toggle');
+
+        let target = e.currentTarget,
+          current = $(target),
+          input = current.parents('.password-field').find("input");
+        if (input.attr("type") === "password") {
+          current.addClass('show');
+          input.attr("type", "text");
+        } else {
+          current.removeClass('show');
+          input.attr("type", "password");
+        }
+      });
 
 
     });

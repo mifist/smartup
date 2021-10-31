@@ -23,29 +23,165 @@
 <!-- Preloader END -->
 
 
-<main>
+<main class="my-profile">
 	<header class="main-header">
 	<div class="container">
 		<div class="column left-side">
 			<a id="logo" href="/"><img src="assets/images/logo-big.svg" alt="SmartUp" /></a>
 		</div>
 		<div class="column right-side">
-			<a href="/" class="button header-button">Se connecter</a>
+			<a href="/" class="button header-button hide-on-mobile">Mes ressources</a>
+			<div class="user-area">
+				<div class="user-info">
+					<div class="user-avtar">
+						<img src="assets/images/user.png" alt="User"/>
+					</div>
+					<div class="user-name">Jérémy</div>
+					<span class="curret"></span>
+				</div>
+				<ul class="user-dropdown">
+					<li><a href="#">Mon profil</a></li>
+					<li class="hide-on-desktop"><a href="#">Mes ressources</a></li>
+					<li><a href="#">Mes produits</a></li>
+					<li><a href="#">Deconnexion</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </header>
 
 
-	<div class="features-banner">
+	<div class="features-banner profile-banner">
 	<div class="container">
+
 		<div class="column left-side">
-			<h1 class="features-banner__title">title</h1>
+			<h1 class="features-banner__title">Mon compte</h1>
 		</div>
+
 	</div>
 </div>
 
 
-	<!--// page code here-->
+	<div class="tabs-list">
+		<form id="profile-form" action="/" method="post" class="profile-form" >
+			<div class="container">
+				<div class="tabs-list__nav">
+					<ul>
+						<li class="tabs-list__nav-item active-tab">
+							<a href="#" data-id="profile">Modifier mon profil</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="password">Mot de passe</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="paiement">Informations de paiement</a>
+						</li>
+						<li class="tabs-list__nav-item">
+							<a href="#" data-id="credits">Mes crédits</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="tabs-list__body">
+
+					<div data-id="profile" class="tabs-list__content active-tab">
+						<div class="tab-content-container">
+							<div class="container">
+	<div class="column left-side">
+
+	<div class="profile-image">
+		<img src="assets/images/photo.png" alt="Photo">
+	</div>
+
+	</div>
+	<div class="column right-side">
+
+		<div class="profile-form__field">
+			<label for="contact_email">Email</label>
+			<input type="email" name="contact_email" id="contact_email" required>
+		</div>
+		<div class="profile-form__field">
+			<label for="contact_message">Message</label>
+			<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
+		</div>
+		<div class="profile-form__footer">
+			<button type="submit">ENVOYER</button>
+		</div>
+
+	</div>
+</div>
+
+						</div>
+					</div>
+
+					<div data-id="password" class="tabs-list__content">
+						<div class="tab-content-container">
+							<div class="container">
+	<div class="column left-side">
+
+
+
+	</div>
+	<div class="column right-side">
+
+		<div class="profile-form__field">
+			<label for="contact_email">Email</label>
+			<input type="email" name="contact_email" id="contact_email" required>
+		</div>
+		<div class="profile-form__field">
+			<label for="contact_message">Message</label>
+			<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
+		</div>
+		<div class="profile-form__footer">
+			<button type="submit">ENVOYER</button>
+		</div>
+
+	</div>
+</div>
+
+						</div>
+					</div>
+
+					<div data-id="paiement" class="tabs-list__content">
+						<div class="tab-content-container">
+							<div class="container">
+	<div class="column left-side">
+
+
+
+	</div>
+	<div class="column right-side">
+
+		Informations de paiement
+
+	</div>
+</div>
+
+						</div>
+					</div>
+
+					<div data-id="credits" class="tabs-list__content">
+						<div class="tab-content-container">
+							<div class="container">
+	<div class="column left-side">
+
+
+
+	</div>
+	<div class="column right-side">
+
+		Mes crédits
+
+	</div>
+</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</form>
+	</div>
 
 
 </main>
@@ -101,6 +237,7 @@
 	</div>
 </footer>
 
+
 <!-- jQuery Core -->
 <script
 	src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -114,4 +251,5 @@
 
 </body>
 </html>
+
 
