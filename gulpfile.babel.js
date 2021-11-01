@@ -281,18 +281,22 @@ function watch() {
   gulp.watch('**/*.php')
     .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
     .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
-  gulp.watch('**/*.html', compileHtml);
+  //gulp.watch('**/*.html', compileHtml);
   gulp.watch('src/assets/images/**/*', gulp.series(images));
 }
 
+function watchHtml() {
+  gulp.watch('**/*.html', compileHtml);
+}
+
 // Build the "dist" folder by running all of the below tasks
-gulp.task('build',
-  gulp.series(clean, gulp.parallel(sass, compileHtml, 'webpack:build', images, copy)));
+gulp.task('build', gulp.series(clean, gulp.parallel(sass, compileHtml, 'webpack:build', images, copy)));
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default',
-  gulp.series('build', gulp.parallel('webpack:watch', watch)));
+gulp.task('html', gulp.series(gulp.parallel(watchHtml)));
+
+// Build the site, run the server, and watch for file changes
+gulp.task('default', gulp.series('build', gulp.parallel('webpack:watch', watch, watchHtml)));
 
 // Package task
-gulp.task('package',
-  gulp.series('build', archive));
+gulp.task('package', gulp.series('build', archive));

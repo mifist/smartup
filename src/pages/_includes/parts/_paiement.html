@@ -1,12 +1,66 @@
-<div class="container">
+<div class="row paiement-info profile-row">
 	<div class="column left-side">
-
 
 
 	</div>
 	<div class="column right-side">
 
-		Informations de paiement
+		<p>Complétez les informations ci-dessous si vous avez besoin d’une facture.</p>
+
+		<div class="address-card edit-info-card">
+			<h4 class="title">Facturation</h4>
+			<div class="text">
+				79, rue des Francs <br />
+				1040 Bruxelles <br />
+				Belgium  <br />
+			</div>
+			<a href="#" data-id="facture-form" class="button square-button open-edit">Mettre à jour</a>
+		</div>
+
+		<form id="facture-form" action="/" method="post" class="profile-form facture-form edit-form">
+
+			<div class="form-group">
+				<h2 class="form-title">Facturation</h2>
+
+				<div class="profile-form__field">
+					<label for="company_name">Nom de l’entreprise</label>
+					<input type="text" name="company_name" id="company_name" required>
+				</div>
+
+				<div class="profile-form__field">
+					<label for="adresse">Adresse</label>
+					<input type="text" name="adresse" id="adresse" required>
+				</div>
+
+				<div class="profile-form__field w-1-3">
+					<label for="postale">Code postale</label>
+					<input type="text" name="postale" id="postale" required>
+				</div>
+
+				<div class="profile-form__field w-2-3">
+					<label for="ville">Ville</label>
+					<input type="text" name="ville" id="ville" required>
+				</div>
+
+				<div class="profile-form__field w-1-3">
+					<label for="pays">pays</label>
+					<input type="text" name="pays" id="pays" required>
+				</div>
+
+				<div class="profile-form__field w-2-3">
+					<label for="TVA">NUMERO TVA</label>
+					<input type="text" name="TVA" id="TVA" placeholder="Ex: BE0811.999.000" required>
+				</div>
+
+				<div class="profile-form__footer">
+					<div class="actions">
+						<button type="reset" class="cancel-button">Annuler</button>
+						<button type="submit">Sauvegarder</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
 
 	</div>
 </div>

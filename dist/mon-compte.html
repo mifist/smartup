@@ -63,7 +63,7 @@
 
 
 	<div class="tabs-list">
-		<form id="profile-form" action="/" method="post" class="profile-form" >
+
 			<div class="container">
 				<div class="tabs-list__nav">
 					<ul>
@@ -86,27 +86,53 @@
 
 					<div data-id="profile" class="tabs-list__content active-tab">
 						<div class="tab-content-container">
-							<div class="container">
+							<div class="row profile-info profile-row">
 	<div class="column left-side">
 
-	<div class="profile-image">
-		<img src="assets/images/photo.png" alt="Photo">
-	</div>
+		<div class="profile-pic-wrapper">
+			<div class="pic-holder">
+				<!-- uploaded pic shown here -->
+				<img id="profilePic" class="pic" src="assets/images/photo.png" alt="Photo">
+
+				<label for="newProfilePhoto" class="upload-file-block">
+					<span class="text-center">
+						<span class="text-uppercase">
+							Upload <br /> Profile Photo
+						</span>
+					</span>
+					<span class="camera-icon"><img src="assets/images/camera.svg" alt="Upload Profile Photo" /></span>
+				</label>
+				<input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto" accept="image/*" style="display: none;" />
+
+				<div class="upload-loader"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div></div>
+			</div>
+		</div>
 
 	</div>
 	<div class="column right-side">
 
-		<div class="profile-form__field">
-			<label for="contact_email">Email</label>
-			<input type="email" name="contact_email" id="contact_email" required>
-		</div>
-		<div class="profile-form__field">
-			<label for="contact_message">Message</label>
-			<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
-		</div>
-		<div class="profile-form__footer">
-			<button type="submit">ENVOYER</button>
-		</div>
+		<form id="profile-form" action="/" method="post" class="profile-form">
+
+			<div class="form-group">
+				<div class="profile-form__field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+
+				<div class="profile-form__field">
+					<label for="prenom">Prénom</label>
+					<input type="text" name="prenom" id="prenom" required>
+				</div>
+
+				<div class="profile-form__footer">
+					<div class="actions">
+						<button type="reset" class="cancel-button">Annuler</button>
+						<button type="submit">Sauvegarder</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
 
 	</div>
 </div>
@@ -116,25 +142,59 @@
 
 					<div data-id="password" class="tabs-list__content">
 						<div class="tab-content-container">
-							<div class="container">
+							<div class="row password-info profile-row">
 	<div class="column left-side">
-
 
 
 	</div>
 	<div class="column right-side">
 
-		<div class="profile-form__field">
-			<label for="contact_email">Email</label>
-			<input type="email" name="contact_email" id="contact_email" required>
-		</div>
-		<div class="profile-form__field">
-			<label for="contact_message">Message</label>
-			<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
-		</div>
-		<div class="profile-form__footer">
-			<button type="submit">ENVOYER</button>
-		</div>
+		<p>Votre mot de passe devrait contenir des chiffres, lettres en majuscules et des <br /> caractères spéciaux.</p>
+
+		<form id="edit-password-form" action="/" method="post" class="profile-form edit-password-form">
+
+			<div class="form-group">
+
+				<!-- Password input-->
+				<div class="profile-form__field">
+					<label for="password">Nouveau mot de passe</label>
+					<div class="password-field">
+						<input type="password" name="password" id="password" autocomplete="off" required pattern=".{6,}" />
+						<span class="toggle-password"><img src="assets/images/eye.svg" alt="Show/Hide" /></span>
+					</div>
+					<small class="help-block password-progress">
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+					</small>
+					<span class="error">Password is required</span>
+				</div>
+				<!-- Password input-->
+				<div class="profile-form__field">
+					<label for="confirm-password">Confirmation mot de passe</label>
+					<div class="password-field">
+						<input type="password" name="confirm-password" id="confirm-password" autocomplete="off" required pattern=".{6,}" />
+						<span class="toggle-password"><img src="assets/images/eye.svg" alt="Show/Hide" /></span>
+					</div>
+					<small class="help-block password-progress">
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+						<small class='progress-bar' style='width: 25%'></small>
+					</small>
+					<span class="error">Password don't match</span>
+				</div>
+
+				<div class="profile-form__footer">
+					<div class="actions">
+						<button type="reset" class="reset-button">Reset password</button>
+						<button type="submit">Mettre à jour</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
 
 	</div>
 </div>
@@ -144,15 +204,69 @@
 
 					<div data-id="paiement" class="tabs-list__content">
 						<div class="tab-content-container">
-							<div class="container">
+							<div class="row paiement-info profile-row">
 	<div class="column left-side">
-
 
 
 	</div>
 	<div class="column right-side">
 
-		Informations de paiement
+		<p>Complétez les informations ci-dessous si vous avez besoin d’une facture.</p>
+
+		<div class="address-card edit-info-card">
+			<h4 class="title">Facturation</h4>
+			<div class="text">
+				79, rue des Francs <br />
+				1040 Bruxelles <br />
+				Belgium  <br />
+			</div>
+			<a href="#" data-id="facture-form" class="button square-button open-edit">Mettre à jour</a>
+		</div>
+
+		<form id="facture-form" action="/" method="post" class="profile-form facture-form edit-form">
+
+			<div class="form-group">
+				<h2 class="form-title">Facturation</h2>
+
+				<div class="profile-form__field">
+					<label for="company_name">Nom de l’entreprise</label>
+					<input type="text" name="company_name" id="company_name" required>
+				</div>
+
+				<div class="profile-form__field">
+					<label for="adresse">Adresse</label>
+					<input type="text" name="adresse" id="adresse" required>
+				</div>
+
+				<div class="profile-form__field w-1-3">
+					<label for="postale">Code postale</label>
+					<input type="text" name="postale" id="postale" required>
+				</div>
+
+				<div class="profile-form__field w-2-3">
+					<label for="ville">Ville</label>
+					<input type="text" name="ville" id="ville" required>
+				</div>
+
+				<div class="profile-form__field w-1-3">
+					<label for="pays">pays</label>
+					<input type="text" name="pays" id="pays" required>
+				</div>
+
+				<div class="profile-form__field w-2-3">
+					<label for="TVA">NUMERO TVA</label>
+					<input type="text" name="TVA" id="TVA" placeholder="Ex: BE0811.999.000" required>
+				</div>
+
+				<div class="profile-form__footer">
+					<div class="actions">
+						<button type="reset" class="cancel-button">Annuler</button>
+						<button type="submit">Sauvegarder</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
 
 	</div>
 </div>
@@ -162,15 +276,32 @@
 
 					<div data-id="credits" class="tabs-list__content">
 						<div class="tab-content-container">
-							<div class="container">
+							<div class="row credits-info profile-row">
 	<div class="column left-side">
-
 
 
 	</div>
 	<div class="column right-side">
 
-		Mes crédits
+		<p>Vous pouvez utiliser vos coupons lors du paiement.</p>
+
+		<form id="credits-form" action="/" method="post" class="profile-form credits-form">
+			<h2 class="form-title">Crédits</h2>
+
+			<div class="form-group-row">
+				<label for="coupon_code">10% de réduction</label>
+				<div class="profile-form__field-row">
+					<div class="profile-form__field">
+						<input type="text" name="coupon_code" id="coupon_code" class="textToCopy" placeholder="GFTR5H7H6HNJH" value="GFTR5H7H6HNJH">
+					</div>
+					<div class="profile-form__footer">
+						<button type="submit" class="copyButton">Copier</button>
+					</div>
+				</div>
+				 <p class="copyResult"></p>
+			</div>
+
+		</form>
 
 	</div>
 </div>
@@ -180,7 +311,7 @@
 
 				</div>
 			</div>
-		</form>
+
 	</div>
 
 

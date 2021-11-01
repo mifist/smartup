@@ -13,4 +13,5 @@ import './lib/jquery.sticky-kit.min';
 import './components/sticky-aside';
 import './components/tabs';
 import './components/user-area';
+import './components/profile';
 import './components/custom';

@@ -7,4 +7,129 @@
   .tabs-list__nav > ul {
     border-bottom: none;
   }
+  .tab-content-container {
+    width: 100%;
+    margin-right: 0;
+    @media screen and (max-width: 769px) {
+      width: 100%;
+      margin-right: 0;
+    }
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
 }
+
+.profile-row {
+  align-items: flex-start;
+  margin-top: 8%;
+  p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .left-side {
+    max-width: 251px;
+    width: 100%;
+    @media screen and (max-width: 769px) {
+      max-width: 100%;
+      flex: 1 0 100%;
+    }
+  }
+  .right-side {
+    flex: 1;
+    @media screen and (max-width: 769px) {
+      max-width: 100%;
+      flex: 1 0 100%;
+    }
+  }
+}
+
+.profile-info {
+  .left-side {
+    @media screen and (max-width: 769px) {
+      max-width: max-content;
+      padding-right: 24px;
+    }
+    @media screen and (max-width: 480px) {
+      max-width: 100%;
+      flex: 1 0 100%;
+      padding-right: 0;
+    }
+  }
+}
+
+.edit-form {
+  display: none;
+  margin-bottom: 50px;
+  &.show {
+    display: block;
+  }
+}
+.edit-info-card {
+  &.hide {
+    display: none;
+  }
+}
+
+.address-card {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: block;
+  max-width: max-content;
+  @media screen and (max-width: 480px) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .title {
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 25px;
+    color: #333333;
+    margin-bottom: 15px;
+  }
+  .text {
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+  }
+  .button {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.274286px;
+    color: #FFFFFF;
+  }
+}
+
+.credits-form,
+.edit-password-form {
+  margin-top: 50px;
+}
+
+.edit-password-form {
+  .profile-form__footer {
+    .actions {
+      width: 100%;
+      justify-content: space-between;
+      .reset-button {
+        margin-right: auto;
+      }
+    }
+    [type="submit"],
+    .reset-button {
+      min-height: 51px;
+      @media screen and (max-width: 480px) {
+        min-height: 40px;
+      }
+    }
+  }
+
+}
+

@@ -127,39 +127,102 @@
   }
 }
 
+.form-group {
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @media screen and (max-width: 769px) {
+   // margin: 0 auto;
+    max-width: 100%;
+  }
+}
+.form-group-row {
+  max-width: 290px;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  label {
+    margin-bottom: 21px !important;
+  }
+}
+
+.copyResult {
+  opacity: 0;
+  transition: all .1s;
+  line-height: 1;
+  font-weight: normal;
+  font-size: 14px;
+  color: #7F7F7F;
+  width: 100%;
+  display: block;
+  &.show {
+    opacity: 1;
+  }
+}
+
 .profile-form {
   margin-top: 0;
   font-family: $montserrat;
+  &.facture-form {
+    margin-top: 50px;
+  }
+  .form-title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 25px;
+    color: #333333;
+    margin-bottom: 35px;
+    margin-top: 0;
+  }
   label {
     font-family: $montserrat;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: #111111;
+    color: #7F7F7F;
     width: 100%;
-    margin-bottom: 11px;
+    margin-bottom: 3px;
     display: block;
+    text-transform: uppercase;
+    transition: all .3s;
+    &.focus {
+      color: $blue;
+    }
   }
   input,
   textarea {
     display: block;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: #111111;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
     width: 100%;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #DFDFDF;
+    border-bottom: 1px solid #ECECEC;
     box-sizing: border-box;
-    border-radius: 20px;
-    padding: 10px 24px;
-    min-height: 42px;
+    border-radius: 0;
+    padding: 18px 0;
+    min-height: 57px;
     outline: none;
     font-family: $montserrat;
+    transition: all .3s;
+    @media screen and (max-width: 769px) {
+      padding: 12px 0;
+      min-height: 42px;
+    }
     &::placeholder {
       color: #4A4A4A;
       font-family: $montserrat;
+    }
+    &:focus {
+      border-bottom: 1px solid $blue;
     }
   }
   textarea {
@@ -181,11 +244,111 @@
       background: #4A4A4A;
     }
   }
-  &_field {
-    margin-bottom: 19px;
-  }
+  [type="password"] {
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
 
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-security: disc;
+    -webkit-text-security: disc;
+    -moz-text-security: disc;
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+
+    /* add spacing to better separate each image */
+    letter-spacing: 2px;
+  }
+  &__field {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+    @media screen and (max-width: 580px) {
+      margin-bottom: 24px;
+    }
+    .error {
+      display: none;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: #FE466C;
+      margin-top: 8px;
+      &.show {
+        display: block;
+      }
+    }
+    .password-field {
+      .toggle-password {
+        max-width: 25px;
+        width: 100%;
+        top: initial;
+        right: 0;
+      }
+    }
+    &.focus-field {
+      label {
+        color: $blue;
+      }
+    }
+    &.w-1-3 {
+      max-width: calc(33.333% + 50px);
+      padding-right: 50px;
+    }
+    &.w-2-3 {
+      max-width: calc(66.667% - 50px);
+    }
+  }
+  &__field-row {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    input {
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      min-height: 52px;
+      padding: 12px 24px;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, 0.5);
+      &:focus {
+        border: 1px solid $blue;
+      }
+    }
+    .profile-form__field {
+      margin: 0;
+      margin-right: 12px;
+      flex: 1;
+    }
+    .profile-form__footer {
+      max-width: max-content;
+      [type="submit"] {
+        min-height: 52px;
+        letter-spacing: 0.274286px;
+        margin: 0;
+        max-width: max-content;
+      }
+    }
+
+  }
   &__footer {
+    width: 100%;
+    display: block;
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      @media screen and (max-width: 480px) {
+        margin-top: 10px;
+      //  justify-content: center;
+      }
+    }
     p {
       font-weight: 300;
       font-size: 14px;
@@ -197,7 +360,29 @@
         display: inline-block;
       }
     }
-    [type="submit"] {
+    [type="cancel"],
+    [type="reset"] {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.274286px;
+      color: #000000;
+      margin-right: 24px;
+      display: block;
+      max-width: max-content;
+      padding: 10px 0;
+      background: transparent;
+      outline: none;
+      box-shadow: none;
+      border: none;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $blue;
+      }
+    }
+    [type="submit"],
+    .reset-button {
       display: block;
       max-width: max-content;
       padding: 10px 15px;
@@ -206,20 +391,265 @@
       background: $blue;
       color: $white;
       box-sizing: border-box;
-      border-radius: 20px;
+      border-radius: 3px;
       font-weight: 500;
-      font-size: 11px;
-      line-height: 13px;
+      font-size: 16px;
+      line-height: 20px;
       filter: brightness(1);
       transition: all .3s ease-in-out;
       text-decoration: none;
       outline: none;
-      box-shadow: none;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.359402);
       &:hover,
       &:focus {
         cursor: pointer;
         filter: brightness(.9);
       }
     }
+    .reset-button {
+      border: 1px solid #333333;
+      color: $white;
+      letter-spacing: 0.24px;
+      background: #333333;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.359402);
+      border-radius: 3px;
+      padding: 10px 15px;
+      min-height: 40px;
+      &:hover,
+      &:focus {
+        color: $white;
+        filter: brightness(.9);
+      }
+    }
+  }
+}
+
+// Upload user photo
+.profile-pic-wrapper {
+  max-width: max-content;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 480px) {
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+  .camera-icon {
+    background: #EAEDEF;
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    border-radius: 50%;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+.pic-holder {
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  width: 154px;
+  height: 154px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  .pic {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+  }
+  .upload-file-block,
+  .upload-loader {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    .text-center {
+      position: absolute;
+      top: 40%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      color: #f8f9fc;
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.2s;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(90, 92, 105, 0.3);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      border-radius: 50%;
+    }
+  }
+  .upload-loader {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    height: auto;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #111111;
+    opacity: 0;
+    transition: all .1s;
+  }
+  .upload-file-block {
+    cursor: pointer;
+  }
+  &.uploadInProgress {
+    .upload-file-block {
+      display: none;
+    }
+    .upload-loader {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    .upload-file-block {
+      .text-center {
+        opacity: 1;
+      }
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* Snackbar css */
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 14px;
+  transform: translateX(-50%);
+  &.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+}
+
+.help-block {
+  font-size: 80%;
+  font-weight: 400;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.1);
+  transition: width .6s ease;
+  border-radius: 4px;
+  min-height: 8px;
+  width: calc(25% - 5px);
+  margin-right: 5px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &.bg-danger {
+    background-color: #FE466C !important;
+  }
+  &.bg-weak {
+    background-color: #e4a760 !important;
+  }
+  &.bg-warning {
+    background-color: #ffc107 !important;
+  }
+  &.bg-success {
+    background-color: #4EDF76 !important;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
   }
 }

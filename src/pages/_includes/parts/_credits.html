@@ -1,12 +1,29 @@
-<div class="container">
+<div class="row credits-info profile-row">
 	<div class="column left-side">
-
 
 
 	</div>
 	<div class="column right-side">
 
-		Mes crédits
+		<p>Vous pouvez utiliser vos coupons lors du paiement.</p>
+
+		<form id="credits-form" action="/" method="post" class="profile-form credits-form">
+			<h2 class="form-title">Crédits</h2>
+
+			<div class="form-group-row">
+				<label for="coupon_code">10% de réduction</label>
+				<div class="profile-form__field-row">
+					<div class="profile-form__field">
+						<input type="text" name="coupon_code" id="coupon_code" class="textToCopy" placeholder="GFTR5H7H6HNJH" value="GFTR5H7H6HNJH">
+					</div>
+					<div class="profile-form__footer">
+						<button type="submit" class="copyButton">Copier</button>
+					</div>
+				</div>
+				 <p class="copyResult"></p>
+			</div>
+
+		</form>
 
 	</div>
 </div>

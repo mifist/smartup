@@ -1,24 +1,50 @@
-<div class="container">
+<div class="row profile-info profile-row">
 	<div class="column left-side">
 
-	<div class="profile-image">
-		<img src="assets/images/photo.png" alt="Photo">
-	</div>
+		<div class="profile-pic-wrapper">
+			<div class="pic-holder">
+				<!-- uploaded pic shown here -->
+				<img id="profilePic" class="pic" src="assets/images/photo.png" alt="Photo">
+
+				<label for="newProfilePhoto" class="upload-file-block">
+					<span class="text-center">
+						<span class="text-uppercase">
+							Upload <br /> Profile Photo
+						</span>
+					</span>
+					<span class="camera-icon"><img src="assets/images/camera.svg" alt="Upload Profile Photo" /></span>
+				</label>
+				<input class="uploadProfileInput" type="file" name="profile_pic" id="newProfilePhoto" accept="image/*" style="display: none;" />
+
+				<div class="upload-loader"><div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div></div>
+			</div>
+		</div>
 
 	</div>
 	<div class="column right-side">
 
-		<div class="profile-form__field">
-			<label for="contact_email">Email</label>
-			<input type="email" name="contact_email" id="contact_email" required>
-		</div>
-		<div class="profile-form__field">
-			<label for="contact_message">Message</label>
-			<textarea name="contact_message" id="contact_message" cols="30" rows="10" placeholder="Ecrivez votre message ici…"></textarea>
-		</div>
-		<div class="profile-form__footer">
-			<button type="submit">ENVOYER</button>
-		</div>
+		<form id="profile-form" action="/" method="post" class="profile-form">
+
+			<div class="form-group">
+				<div class="profile-form__field">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" required>
+				</div>
+
+				<div class="profile-form__field">
+					<label for="prenom">Prénom</label>
+					<input type="text" name="prenom" id="prenom" required>
+				</div>
+
+				<div class="profile-form__footer">
+					<div class="actions">
+						<button type="reset" class="cancel-button">Annuler</button>
+						<button type="submit">Sauvegarder</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
 
 	</div>
 </div>
