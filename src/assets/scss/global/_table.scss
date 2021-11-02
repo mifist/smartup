@@ -63,6 +63,10 @@ table {
     line-height: 17px;
     text-transform: uppercase;
     color: #333333;
+    text-align: right;
+    &:first-of-type {
+      text-align: left;
+    }
     &.small {
       width: 100px;
     }

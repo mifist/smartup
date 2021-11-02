@@ -6,10 +6,6 @@
   max-width: 100%;
   display: block;
   padding-bottom: 70px;
-  > .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 .facture-wrapper {
   width: 100%;
@@ -39,6 +35,22 @@
   }
 }
 
+.facture-details {
+  .column {
+    @media screen and (max-width: 480px) {
+      flex: 1 0 100%;
+      width: 100%;
+    }
+  }
+  .right-side {
+    padding-left: 50px;
+    @media screen and (max-width: 480px) {
+      padding-left: 0;
+    }
+
+
+  }
+}
 
 .facture-logo {
   display: flex;
