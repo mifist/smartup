@@ -23,89 +23,173 @@
 <!-- Preloader END -->
 
 
-<main>
-	<header class="main-header">
-	<div class="container">
-		<div class="column left-side">
-			<a id="logo" href="/"><img src="assets/images/logo-big.svg" alt="SmartUp" /></a>
-		</div>
-		<div class="column right-side">
-			<a href="/" class="button header-button">Se connecter</a>
-		</div>
-	</div>
-</header>
+<main class="coupon-page">
 
+	<div class="coupon-header">
 
-	<div class="features-banner blue-banner">
-	<div class="container">
-		<div class="column left-side">
-			<h1 class="features-banner__title">Des ressources pour développer vos projets personnels et professionnels.</h1>
+		<div class="top container">
+			<a href="#" onclick="window.history.back();" class="back"><img class="arrow" src="assets/images/left-arrow.svg" alt="Back"/> Retour</a>
+			<h1 class="title">Smart Up</h1>
 		</div>
-		<div class="column right-side">
-			<div class="features-banner__image">
-				<img src="assets/images/reading_time.png" alt="Des ressources pour développer vos projets personnels et professionnels." />
+
+		<div class="container">
+			<div class="text-separator blue"><span class="text">RECAPITULATIF DE LA COMMANDE</span></div>
+
+			<div class="ordered-card">
+				<div class="top row">
+					<div class="column left-side">
+						<h4 class="name">Articles commandés</h4>
+					</div>
+					<div class="column right-side">
+						<h4 class="name">Prix</h4>
+					</div>
+				</div>
+				<div class="content">
+					<div class="order-row">
+						<div class="order-image">
+							<img src="assets/images/ordered-article.jpg" alt="Order"/>
+						</div>
+						<div class="order-title">
+							<h5>Formation Lean Startup : 60 pour créer son projet. </h5>
+						</div>
+						<div class="order-price">
+							<div class="old">90€</div>
+							<div class="price">45€</div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="total">
+							<span class="name">Sous total</span>
+							<span class="price">45€</span>
+						</div>
+
+					</div>
+				</div>
 			</div>
 		</div>
+
 	</div>
-</div>
 
+	<div class="container">
 
-	<!--// page code here-->
+		<form id="ordered-coupon-form" action="/" method="post" class="su-form coupon-form">
+			<div class="form-group-row">
+				<label for="coupon_code">Coupon</label>
+				<div class="su-form__field-row">
+					<div class="su-form__field">
+						<input type="text" name="coupon_code" id="coupon_code" placeholder="GFTR5H7H6HNJH" value="" />
+					</div>
+					<div class="su-form__footer">
+						<button type="submit">VALIDER</button>
+					</div>
+				</div>
+			</div>
+
+		</form>
+
+		<div class="text-section">
+		   <h2>Besoin d’une facture ?</h2>
+			<p>Pour avoir accès à une facture, complétez les informations de facturation dans votre compte. Vous pourrez ensuite accédez à toutes vos factures.</p>
+		</div>
+
+		<div class="text-separator grey"><span class="text">PAIEMENT</span></div>
+
+		<div class="paiement-block">
+			<h3 class="title">Sélectionnez un type de paiement</h3>
+			<form id="paiement-form" action="/" method="post" class="su-form paiement-form">
+				<div class="radio-group">
+					<label class="su-form__radio checked" for="card-type-credit">
+						<input type="radio" name="card-type" id="card-type-credit" value="credit" checked />
+						<span class="label">
+								<span class="name">Titulaire de la carte</span>
+								<span class="description">Payez avec Mastercard, VISA, Maestro.
+Découvrez d’autres moyens de paiement (crédit ou débit) avec Paypal. </span>
+							</span>
+						<span class="image">
+								<img src="assets/images/credit.png" alt="credit"/>
+							</span>
+					</label>
+					<label class="su-form__radio" for="card-type-paypal">
+						<input type="radio" name="card-type" id="card-type-paypal" value="paypal" />
+						<span class="label">
+								<span class="name">Titulaire de la carte</span>
+								<span class="description">Payez avec Mastercard, VISA, Maestro.
+Découvrez d’autres moyens de paiement (crédit ou débit) avec Paypal. </span>
+							</span>
+						<span class="image">
+								<img src="assets/images/paypal.png" alt="credit"/>
+							</span>
+					</label>
+				</div>
+
+				<div class="card-group">
+
+					<div class="su-form__field">
+						<label for="card-title">Titulaire de la carte</label>
+						<input type="text" name="card-title" id="card-title" />
+					</div>
+
+					<div class="su-form__field">
+						<label for="card">Numéro de la carte</label>
+						<input type="text" name="card" placeholder="2344 - 5655 - 8789 - 8691" id="card" />
+					</div>
+
+					<div class="su-form__field date">
+						<label for="expiry-month">Date d’expiration</label>
+						<div class="row">
+							<select name="expiry-month" class="select-50" id="expiry-month">
+								<option>Month</option>
+								<option value="01">Jan (01)</option>
+								<option value="02">Feb (02)</option>
+								<option value="03">Mar (03)</option>
+								<option value="04">Apr (04)</option>
+								<option value="05">May (05)</option>
+								<option value="06">June (06)</option>
+								<option value="07">July (07)</option>
+								<option value="08">Aug (08)</option>
+								<option value="09">Sep (09)</option>
+								<option value="10">Oct (10)</option>
+								<option value="11">Nov (11)</option>
+								<option value="12">Dec (12)</option>
+							</select>
+							<select class="select-50" name="expiry-year">
+								<option value="17">2021</option>
+								<option value="22">2022</option>
+								<option value="23">2023</option>
+								<option value="23">2024</option>
+								<option value="23">2025</option>
+								<option value="23">2026</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="su-form__field cvv">
+						<div class="row">
+							<label for="cvv">CVV</label>
+							<span class="tooltip-container">
+								<img class="tooltip-icon" src="assets/images/tooltip.svg" alt="helper"/>
+								<span class="tooltip">
+									You can find this information in the back of credit card
+								</span>
+							</span>
+						</div>
+						<input type="text" placeholder="CVV" name="cvv" id="cvv"/>
+					</div>
+
+					<div class="su-form__footer">
+						<button type="submit">PAYER</button>
+						<img class="footer-image" src="assets/images/secure.jpg" alt="secure"/>
+					</div>
+
+				</div>
+
+			</form>
+		</div>
+
+	</div>
 
 
 </main>
-<footer class="main-footer">
-	<div class="container">
-		<div class="footer-column footer-text-widget">
-			<div class="disclaimer">
-				<div class="disclaimer__logo">
-					<a id="logo-footer" href="/"><img src="assets/images/logo-label.svg" alt="SmartUp" /></a>
-				</div>
-				<p class="disclaimer__text">Un site Internet qui propose des ressources pour développer vos compétences et vos projets.</p>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contenus</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Proposer un contenu</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">A propos</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">A propos de BizzTuto</a></li>
-					<li><a href="#">Termes & Conditions</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-menu-widget">
-			<div class="footer-menu">
-				<h3 class="footer-menu__title">Contact</h3>
-				<ul class="footer-menu__list">
-					<li><a href="#">Questions fréquentes</a></li>
-					<li><a href="#">Contactez-nous</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="footer-column footer-social-widget">
-			<ul class="footer-social">
-				<!--<li><a href="https://twitter.com/">
-					<img src="assets/images/twitter.svg" alt="Twitter">
-				</a></li>-->
-				<li><a href="https://www.facebook.com/" class="facebook">
-					<img src="assets/images/fb.svg" alt="Facebook">
-				</a></li>
-				<li><a href="https://www.instagram.com/" class="instagram">
-					<img src="assets/images/inst.png" alt="Instagram">
-				</a></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-
 
 <!-- jQuery Core -->
 <script
@@ -120,5 +204,4 @@
 
 </body>
 </html>
-
 
