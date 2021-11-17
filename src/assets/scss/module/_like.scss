@@ -1,0 +1,149 @@
+.post_like {
+  max-width: max-content;
+  position: relative;
+  .like-bubble {
+    border-radius: 4px;
+    min-width: 28px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: $blue;
+    font-size: 14px;
+    line-height: 1;
+    position: absolute;
+    opacity: 0;
+    margin-bottom: 0;
+    right: 5px;
+    top: -52px;
+    &:before {
+      content: '+';
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1;
+      color: $white;
+      margin-right: 2px;
+    }
+    &.is_animating {
+      animation: bubble-move 1.2s 1;
+    }
+  }
+}
+
+.pp_like {
+  text-decoration: none !important;
+  box-shadow: none;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid #0076DF;
+  box-sizing: border-box;
+  border-radius: 19px;
+  color: $blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: border .3s;
+  min-height: 38px;
+  max-width: max-content;
+  padding: 10px 12px;
+  * {
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+  span.counter {
+    background: transparent;
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+    color: $blue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    text-decoration: none;
+  }
+  i {
+    font-size: 19px;
+  }
+  .label {
+    background: transparent;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
+    padding: 0;
+    margin-right: 15px;
+    pointer-events: none;
+  }
+  .thumbs-icon {
+    fill: $blue;
+  }
+  &.liked {
+    color: $blue;
+    pointer-events: none !important;
+    background: $blue;
+    .thumbs-icon {
+      fill: #ffffff;
+    }
+    .counter {
+      color: #ffffff;
+    }
+  }
+  &.only_read {
+    pointer-events: none !important;
+    padding: 12px;
+    span.counter {
+      font-size: 14px;
+      line-height: 1;
+      background: transparent;
+      min-width: initial;
+      min-height: initial;
+      color: $blue;
+    }
+  }
+
+}
+
+@keyframes heart-burst {
+
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+  }
+}
+@keyframes hearts-burst {
+  from { background-position: left; }
+  to { background-position: right; }
+}
+
+@keyframes bubble-move {
+  0% {
+    opacity: 0;
+    top: -52px;
+  }
+
+  25% {
+    opacity: 1;
+    margin-bottom: 35%;
+  }
+  75% {
+    opacity: 1;
+    margin-bottom: 35%;
+  }
+  100% {
+    opacity: 0;
+    top: -32px;
+  }
+}

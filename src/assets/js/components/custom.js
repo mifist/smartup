@@ -74,6 +74,35 @@
         }
       });
 
+      // Modals
+      doc.find('.open-modal').on('click', (e) => {
+        e.preventDefault();
+        const current = $(e.currentTarget),
+          currentId = current.attr('data-id'),
+          currentWind = doc.find(`.modal[data-id='${currentId}']`);
+
+        if ( currentWind.length > 0 ) {
+          if ( currentWind.hasClass('hide') ) {
+            currentWind.removeClass('hide');
+          }
+        }
+
+      });
+
+      doc.find('.close-modal').on('click', (e) => {
+        e.preventDefault();
+        const current = $(e.currentTarget),
+          currentId = current.attr('data-id'),
+          currentWind = doc.find(`.modal[data-id='${currentId}']`);
+
+        if ( currentWind.length > 0 ) {
+          if ( !currentWind.hasClass('hide') ) {
+            currentWind.addClass('hide');
+          }
+        }
+
+      });
+
 
     });
 

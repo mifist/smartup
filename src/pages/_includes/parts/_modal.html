@@ -1,0 +1,96 @@
+<div data-id="modal-concours" class="modal hide">
+	<div class="overlay"></div>
+	<div class="modal-window">
+		<span data-id="modal-concours" class="close close-modal"></span>
+
+		<div class="modal-header">
+		  <h3 class="sub-title">CONCOURS</h3>
+			<h2 class="title">Gagnez un exemplaire du livre “Tool of Titans” de Tim Ferris. </h2>
+		</div>
+
+		<div class="modal-section info-section">
+			<div class="column column-1">
+			  <h5 class="name">VALEUR</h5>
+				<p class="description">50,00 €</p>
+			</div>
+			<div class="column column-2">
+				<h5 class="name">NOMBRE DE LOTS</h5>
+				<p class="description">3</p>
+			</div>
+			<div class="column column-3">
+				<h5 class="name">TEMPS RESTANT</h5>
+				<p class="description">
+					<span class="part">3J</span><span class="part">17H</span><span class="part">25Min.</span><span class="part">GTM</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="modal-section">
+		  <h4 class="section-title">ETAPE 1: entrez votre adresse email</h4>
+			<p class="section-description">Nous avons besoin de votre adresse email pour vous contacter si vous gagnez.</p>
+
+			<form id="send-email-form" action="/" method="post" class="profile-form send-email-form validate">
+				<div class="form-group-row">
+					<div class="profile-form__field-row">
+						<div class="profile-form__field">
+							<input type="email" name="send_email" id="send_email"
+							       placeholder="jeremy.goldyn@gmail.com" value="" required>
+						</div>
+						<div class="profile-form__footer">
+							<button type="submit">Validé !</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="modal-section">
+			<h4 class="section-title">ETAPE 2: Partagez & augmentez vos chances de gagner.</h4>
+			<p class="section-description">Chaque partage vous permet de <u>gagner 1 participation supplémentaire.</u></p>
+			<div class="social-buttons">
+				<a href="#" class="social-button facebook-2">
+					<span class="icon"><img src="assets/images/facebook-letter-logo.svg" alt="Facebook" /></span>
+					<span class="text">Partager sur Facebook</span>
+				</a>
+				<a href="#" class="social-button linkedin">
+					<span class="icon"><img src="assets/images/linkedin-logo.svg" alt="LinkedIn" /></span>
+					<span class="text">Partager sur Linkedin</span>
+				</a>
+				<a href="#" class="social-button email">
+					<span class="icon"><img src="assets/images/email.svg" alt="Email" /></span>
+					<span class="text">Partager sur Email</span>
+				</a>
+				<a href="#" class="social-button instagram">
+					<span class="icon"><img src="assets/images/instagram.svg" alt="Instagram" /></span>
+					<span class="text">Partager sur Instagram</span>
+				</a>
+				<a href="#" class="social-button twitter">
+					<span class="icon"><img src="assets/images/twitter-icon.svg" alt="Twitter" /></span>
+					<span class="text">Partager sur Twitter</span>
+				</a>
+			</div>
+
+			<form id="link-form" action="/" method="post" class="profile-form link-form validate">
+				<div class="form-group-row">
+					<label for="coupon_code">Votre lien de partage</label>
+					<div class="profile-form__field-row">
+						<div class="profile-form__field">
+							<input type="text" name="coupon_code" id="coupon_code" class="textToCopy" placeholder="https://BIZTUTO#jeremy" value="https://BIZTUTO#jeremy">
+						</div>
+						<div class="profile-form__footer">
+							<button type="submit" class="copyButton">Copier</button>
+						</div>
+					</div>
+					<p class="copyResult"></p>
+				</div>
+
+			</form>
+
+			<p>Partagez ce lien où vous voulez. Chaque personne qui participe via votre lien de partage vous permet de gagner une participation supplémentaire.</p>
+
+		</div>
+
+	</div>
+</div>

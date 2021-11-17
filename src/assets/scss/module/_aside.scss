@@ -1,0 +1,228 @@
+.aside-promo {
+  background: #FFFFFF;
+  border: 1px solid #EAEDEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 24px 30px;
+  .title {
+    color: #0076DF;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  p {
+    margin-bottom: 8px;
+    margin-top: 0;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    color: #111111;
+    display: block;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    * {
+      color: inherit;
+      line-height: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      letter-spacing: inherit;
+    }
+  }
+  .vote-link {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    text-decoration-line: underline;
+    color: #0076DF;
+    margin-top: 8px;
+  }
+  .line {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: #DFDFDF;
+    margin: 19px auto;
+  }
+  .button {
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 100%;
+  }
+}
+.promo-looking {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #111111;
+  position: relative;
+  max-width: max-content;
+  margin: 0 auto;
+  margin-bottom: 13px;
+  .icon {
+    max-width: 26px;
+    width: 100%;
+    min-height: 20px;
+    margin-right: 11px;
+    fill: #000000;
+    display: block;
+  }
+  span {
+    color: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: inherit;
+    font-style: inherit;
+    letter-spacing: inherit;
+  }
+}
+.counter-wrapper {
+  display: block;
+  margin-bottom: 24px;
+  .title  {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #4A4A4A;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .counter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: max-content;
+    margin: 0 auto;
+    .part {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      position: relative;
+      flex-direction: column;
+      &:not(:last-of-type) {
+        margin-right: 8px;
+        padding-right: 16px;
+        &:before {
+          content: ':';
+          position: absolute;
+          display: block;
+          font-weight: normal;
+          font-size: 25px;
+          line-height: 30px;
+          text-align: center;
+          color: #DFDFDF;
+          right: 0;
+        }
+      }
+      .number {
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 30px;
+        text-align: center;
+        color: #3B374D;
+        margin-bottom: 4px;
+        width: 100%;
+        display: block;
+      }
+      .name {
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 11px;
+        text-align: center;
+        color: #4A4A4A;
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+// Aside Social
+.aside-social {
+  margin-top: 12px;
+  background: #FFFFFF;
+  border: 1px solid #EAEDEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 7px 15px;
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    li {
+      position: relative;
+      &:hover,
+      &:focus {
+        .more-links {
+          display: flex;
+        }
+      }
+      &:not(:last-of-type) {
+        > a {
+          margin-right: 12px;
+        }
+      }
+    }
+    .more-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+      border: 1px solid #EAEDEF;
+      box-sizing: border-box;
+      border-radius: 4px;
+      position: absolute;
+      top: calc(100% + 7px);
+      right: -15px;
+      padding: 7px 15px;
+      li {
+        &:not(:last-of-type) {
+          > a {
+            margin-right: 0;
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+    .social-link {
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+    }
+  }
+}

@@ -111,7 +111,7 @@
 	</div>
 	<div class="column right-side">
 
-		<form id="profile-form" action="/" method="post" class="profile-form">
+		<form id="profile-form" action="/" method="post" class="profile-form validate">
 
 			<div class="form-group">
 				<div class="profile-form__field">
@@ -151,10 +151,9 @@
 
 		<p>Votre mot de passe devrait contenir des chiffres, lettres en majuscules et des <br /> caractères spéciaux.</p>
 
-		<form id="edit-password-form" action="/" method="post" class="profile-form edit-password-form">
+		<form id="edit-password-form" action="/" method="post" class="profile-form edit-password-form validate">
 
 			<div class="form-group">
-
 				<!-- Password input-->
 				<div class="profile-form__field">
 					<label for="password">Nouveau mot de passe</label>
@@ -168,7 +167,7 @@
 						<small class='progress-bar' style='width: 25%'></small>
 						<small class='progress-bar' style='width: 25%'></small>
 					</small>
-					<span class="error">Password is required</span>
+					<span id="error-for-password" class="error-message">Password is required</span>
 				</div>
 				<!-- Password input-->
 				<div class="profile-form__field">
@@ -183,7 +182,7 @@
 						<small class='progress-bar' style='width: 25%'></small>
 						<small class='progress-bar' style='width: 25%'></small>
 					</small>
-					<span class="error">Password don't match</span>
+					<span id="error-for-confirm-password" class="error-message">Password don't match</span>
 				</div>
 
 				<div class="profile-form__footer">
@@ -223,7 +222,7 @@
 			<a href="#" data-id="facture-form" class="button square-button open-edit">Mettre à jour</a>
 		</div>
 
-		<form id="facture-form" action="/" method="post" class="profile-form facture-form edit-form">
+		<form id="facture-form" action="/" method="post" class="profile-form facture-form edit-form validate">
 
 			<div class="form-group">
 				<h2 class="form-title">Facturation</h2>
@@ -285,7 +284,7 @@
 
 		<p>Vous pouvez utiliser vos coupons lors du paiement.</p>
 
-		<form id="credits-form" action="/" method="post" class="profile-form credits-form">
+		<form id="credits-form" action="/" method="post" class="profile-form credits-form validate">
 			<h2 class="form-title">Crédits</h2>
 
 			<div class="form-group-row">

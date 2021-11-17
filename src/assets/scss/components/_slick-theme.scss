@@ -10,7 +10,8 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: FontAwesome !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: #3f5375 !default;
+$slick-arrow-color: #fff !default;
+$slick-arrow-color-hover: black !default;
 $slick-dot-color: black !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\f053" !default;
@@ -52,129 +53,91 @@ $slick-opacity-not-active: 0.75 !default;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
-  width: 54px;
+  height: 40px;
+  width: 40px;
   line-height: 0;
   font-size: 0;
   cursor: pointer;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   color: transparent;
   top: 45%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
   transform: translate(0, -50%);
   padding: 0;
   border: none;
   outline: none;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 2px 4px 0 rgba(126, 144, 166, 0.45);
-  @media screen and (max-width: 1440px) {
-    height: 54px;
-    width: 54px;
-  }
-  @media screen and (max-width: 400px) {
-    opacity: 0.7;
-    height: 38px;
-    width: 38px;
-  }
-  &:hover, &:focus {
-    outline: none;
-    background: #fff;
-    color: transparent;
-    &:before {
-      opacity: $slick-opacity-on-hover;
-    }
-  }
   &.slick-disabled:before {
     opacity: $slick-opacity-not-active;
   }
   &:before {
-    font-family: $slick-font-family;
+    font-family: Arial;
     font-size: 13px;
     line-height: 1;
     color: $slick-arrow-color;
     opacity: $slick-opacity-default;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: rotate(135deg);
     margin: 0 auto;
+    display: block;
+    position: relative;
+    left: -3px;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid $slick-arrow-color;
+    border-left: 2px solid $slick-arrow-color;
+    transition: all .3s;
+  }
+  &:hover, &:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: transparent;
+    &:before {
+      opacity: $slick-opacity-on-hover;
+      border-top: 2px solid $slick-arrow-color-hover;
+      border-left: 2px solid $slick-arrow-color-hover;
+    }
   }
 }
 
 .slick-prev {
-  left: -3.5%;
-  @media screen and (max-width: 1660px) {
-    left: -3.5%;
-  }
-  @media screen and (max-width: 1440px) {
-    left: -3.5%;
-  }
-  @media screen and (max-width: 1366px) {
-    left: -3.5%;
-  }
-  @media screen and (max-width: 1130px) {
-    left: -7px;
+  left: 35px;
+  @media screen and (max-width: 480px) {
+    left: 20px;
   }
   [dir="rtl"] & {
     left: auto;
-    right: -3.5%;
-    @media screen and (max-width: 1660px) {
-      right: -3.5%;
-    }
-    @media screen and (max-width: 1440px) {
-      right: -3.5%;
-    }
-    @media screen and (max-width: 1366px) {
-      right: -3.5%;
-    }
-    @media screen and (max-width: 1130px) {
-      right: -7px;
+    right: 35px;
+    @media screen and (max-width: 480px) {
+      right: 20px;
     }
   }
   &:before {
-    content: $slick-prev-character;
+    content: "";  // $slick-prev-character
+    transform: rotate(-45deg);
+    left: initial;
+    right: -3px;
     [dir="rtl"] & {
-      content: $slick-next-character;
+      content: ""; // $slick-next-character
     }
   }
 }
 
 .slick-next {
-  right: -3.5%;
-  @media screen and (max-width: 1660px) {
-    right: -3.5%;
-  }
-  @media screen and (max-width: 1440px) {
-    right: -3.5%;
-  }
-  @media screen and (max-width: 1366px) {
-    right: -3.5%;
-  }
-  @media screen and (max-width: 1130px) {
-    right: -7px;
+  right: 35px;
+  @media screen and (max-width: 480px) {
+    right: 20px;
   }
   [dir="rtl"] & {
-    left: -3.5%;
+    left: 35px;
     right: auto;
-    @media screen and (max-width: 1660px) {
-      left: -3.5%;
-    }
-    @media screen and (max-width: 1440px) {
-      left: -3.5%;
-    }
-    @media screen and (max-width: 1366px) {
-      left: -3.5%;
-    }
-    @media screen and (max-width: 1130px) {
-      left: -7px;
+    @media screen and (max-width: 480px) {
+      left: 20px;
     }
   }
   &:before {
-    content: $slick-next-character;
+    content: "";  // $slick-next-character
     [dir="rtl"] & {
-      content: $slick-prev-character;
+      content: "";  // $slick-prev-character
     }
   }
 }

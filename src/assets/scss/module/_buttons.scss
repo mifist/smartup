@@ -144,7 +144,8 @@ a.link {
     font-size: 14px;
     line-height: 17px;
   }
-  &.facebook {
+  &.facebook,
+  &.facebook-2 {
     background: #3667B8;
     border-radius: 5px;
     border: 1px solid transparent;
@@ -153,6 +154,166 @@ a.link {
       width: 30px;
       height: 30px;
       left: 10px;
+    }
+  }
+  &.facebook-2 {
+    width: 100%;
+    min-height: 38px;
+    background: #4863B6;
+    border: 1px solid #4863B6;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.466667px;
+    color: #FFFFFF;
+    padding-left: 50px;
+    justify-content: flex-start;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 37px;
+      pointer-events: none;
+      mix-blend-mode: normal;
+      opacity: 0.2;
+      border-right: 1px solid #FFFFFF;
+      height: 24px;
+      width: 1px;
+      display: block;
+    }
+    .icon {
+      width: 9px;
+      height: 20px;
+      left: 16px;
+    }
+  }
+  &.linkedin {
+    width: 100%;
+    min-height: 38px;
+    background: #0E76A8;
+    border: 1px solid #0E76A8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.466667px;
+    color: #FFFFFF;
+    padding-left: 61px;
+    justify-content: flex-start;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 47px;
+      pointer-events: none;
+      mix-blend-mode: normal;
+      opacity: 0.2;
+      border-right: 1px solid #FFFFFF;
+      height: 24px;
+      width: 1px;
+      display: block;
+    }
+    .icon {
+      width: 19px;
+      height: 19px;
+      left: 16px;
+    }
+  }
+  &.email {
+    width: 100%;
+    min-height: 38px;
+    background: #4A4A4A;
+    border: 1px solid #4A4A4A;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.466667px;
+    color: #FFFFFF;
+    padding-left: 61px;
+    justify-content: flex-start;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 47px;
+      pointer-events: none;
+      mix-blend-mode: normal;
+      opacity: 0.2;
+      border-right: 1px solid #FFFFFF;
+      height: 24px;
+      width: 1px;
+      display: block;
+    }
+    .icon {
+      width: 21px;
+      height: 20px;
+      left: 16px;
+    }
+  }
+  &.instagram {
+    width: 100%;
+    min-height: 38px;
+    background: linear-gradient(180deg, #B22CB1 0%, #EA4354 100%);
+    border: 1px solid #C3246D;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.466667px;
+    color: #FFFFFF;
+    padding-left: 61px;
+    justify-content: flex-start;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 47px;
+      pointer-events: none;
+      mix-blend-mode: normal;
+      opacity: 0.2;
+      border-right: 1px solid #FFFFFF;
+      height: 24px;
+      width: 1px;
+      display: block;
+    }
+    .icon {
+      width: 19px;
+      height: 20px;
+      left: 16px;
+    }
+  }
+  &.twitter {
+    width: 100%;
+    min-height: 38px;
+    background: #15A8E3;
+    border: 1px solid #15A8E3;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.466667px;
+    color: #FFFFFF;
+    padding-left: 61px;
+    justify-content: flex-start;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 47px;
+      pointer-events: none;
+      mix-blend-mode: normal;
+      opacity: 0.2;
+      border-right: 1px solid #FFFFFF;
+      height: 24px;
+      width: 1px;
+      display: block;
+    }
+    .icon {
+      width: 23px;
+      height: 20px;
+      left: 16px;
     }
   }
 }

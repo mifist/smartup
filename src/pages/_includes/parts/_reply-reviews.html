@@ -1,0 +1,35 @@
+<form id="reply-reviews" data-id="reply-reviews" action="/" method="post" class="su-form reply-form validate" >
+	<div class="su-form__field">
+		<div class="ratings-wrapper">
+			<p>Quelle note donneriez-vous pour ce produit ?</p>
+			<ul class="ratings form">
+				<li class="star"></li>
+				<li class="star"></li>
+				<li class="star"></li>
+				<li class="star"></li>
+				<li class="star"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="su-form__field">
+		<label for="reviews_votre">Donnez un titre à votre message</label>
+		<input type="text" name="reviews_votre" id="reviews_votre"
+		       placeholder="Donnez un titre à votre message (ex: Exceptionnel, 100% recommandé, etc.)" required>
+	</div>
+	<div class="su-form__field">
+		<label for="reviews_message">Message</label>
+		<textarea name="reviews_message" id="reviews_message" cols="30" rows="10" placeholder="Ecrivez votre commentaire ici…"></textarea>
+	</div>
+	<div class="su-form__field w-1-2">
+		<label for="reviews_name">Nom</label>
+		<input type="text" name="reviews_name" id="reviews_name" placeholder="Nom, prénom, pseudo…" required>
+	</div>
+	<div class="su-form__field w-1-2">
+		<label for="reviews_email">Email</label>
+		<input type="email" name="reviews_email" id="reviews_email" placeholder="Adresse email" required>
+	</div>
+
+	<div class="su-form__footer">
+		<button type="submit" class="disabled">REPONDRE</button>
+	</div>
+</form>

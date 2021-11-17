@@ -4,8 +4,8 @@
   'use strict';
 
   // Make sure that ValidityState is supported in full (all features)
-  var supported = function () {
-    var input = document.createElement('input');
+  let supported = function () {
+    let input = document.createElement('input');
     return ('validity' in input && 'badInput' in input.validity && 'patternMismatch' in input.validity && 'rangeOverflow' in input.validity && 'rangeUnderflow' in input.validity && 'stepMismatch' in input.validity && 'tooLong' in input.validity && 'tooShort' in input.validity && 'typeMismatch' in input.validity && 'valid' in input.validity && 'valueMissing' in input.validity);
   };
 
@@ -14,19 +14,19 @@
    * @param  {Node]} field The field to validate
    * @return {Object}      The validity object
    */
-  var getValidityState = function (field) {
+  let getValidityState = function (field) {
 
     // Variables
-    var type = field.getAttribute('type') || input.nodeName.toLowerCase();
-    var isNum = type === 'number' || type === 'range';
-    var length = field.value.length;
-    var valid = true;
+    let type = field.getAttribute('type') || input.nodeName.toLowerCase();
+    let isNum = type === 'number' || type === 'range';
+    let length = field.value.length;
+    let valid = true;
 
     // If radio group, get selected field
     if (field.type === 'radio' && field.name) {
-      var group = document.getElementsByName(field.name);
+      let group = document.getElementsByName(field.name);
       if (group.length > 0) {
-        for (var i = 0; i < group.length; i++) {
+        for (let i = 0; i < group.length; i++) {
           if (group[i].form === field.form && field.checked) {
             field = group[i];
             break;
@@ -36,7 +36,7 @@
     }
 
     // Run validity checks
-    var checkValidity = {
+    let checkValidity = {
       badInput: (isNum && length > 0 && !/[-+]?[0-9]/.test(field.value)), // value of a number field is not a number
       patternMismatch: (field.hasAttribute('pattern') && length > 0 && new RegExp(field.getAttribute('pattern')).test(field.value) === false), // value does not conform to the pattern
       rangeOverflow: (field.hasAttribute('max') && isNum && field.value > 0 && Number(field.value) > Number(field.getAttribute('max'))), // value of a number field is higher than the max attribute
@@ -49,7 +49,7 @@
     };
 
     // Check if any errors
-    for (var key in checkValidity) {
+    for (let key in checkValidity) {
       if (checkValidity.hasOwnProperty(key)) {
         // If there's an error, change valid value
         if (checkValidity[key]) {
@@ -247,7 +247,7 @@ if ("document" in self) {
       };
 
       if (objCtr.defineProperty) {
-        var classListPropDesc = {
+        let classListPropDesc = {
           get: classListGetter
           , enumerable: true
           , configurable: true
@@ -276,18 +276,18 @@ if ("document" in self) {
   (function () {
     "use strict";
 
-    var testElement = document.createElement("_");
+    let testElement = document.createElement("_");
 
     testElement.classList.add("c1", "c2");
 
     // Polyfill for IE 10/11 and Firefox <26, where classList.add and
     // classList.remove exist but support only one argument at a time.
     if (!testElement.classList.contains("c2")) {
-      var createMethod = function(method) {
-        var original = DOMTokenList.prototype[method];
+      let createMethod = function(method) {
+        let original = DOMTokenList.prototype[method];
 
         DOMTokenList.prototype[method] = function(token) {
-          var i, len = arguments.length;
+          let i, len = arguments.length;
 
           for (i = 0; i < len; i++) {
             token = arguments[i];
@@ -304,7 +304,7 @@ if ("document" in self) {
     // Polyfill for IE 10 and Firefox <24, where classList.toggle does not
     // support the second argument.
     if (testElement.classList.contains("c3")) {
-      var _toggle = DOMTokenList.prototype.toggle;
+      let _toggle = DOMTokenList.prototype.toggle;
 
       DOMTokenList.prototype.toggle = function(token, force) {
         if (1 in arguments && !this.contains(token) === !force) {
@@ -323,29 +323,29 @@ if ("document" in self) {
 
 
 // Add the novalidate attribute when the JS loads
-var forms = document.querySelectorAll('.validate');
-for (var i = 0; i < forms.length; i++) {
+let forms = document.querySelectorAll('.validate');
+for (let i = 0; i < forms.length; i++) {
   forms[i].setAttribute('novalidate', true);
 }
 
 
 // Validate the field
-var hasError = function (field) {
+let hasError = function (field) {
 
   // Don't validate submits, buttons, file and reset inputs, and disabled fields
   if (field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') return;
 
   // Get validity
-  var validity = field.validity;
+  let validity = field.validity;
 
   // If valid, return null
-  if (validity.valid) return;
+  if (validity && validity.valid) return;
 
   // If field is required and empty
-  if (validity.valueMissing) return 'Please fill out this field.';
+  if (validity && validity.valueMissing) return 'Please fill out this field.';
 
   // If not the right type
-  if (validity.typeMismatch) {
+  if (validity && validity.typeMismatch) {
 
     // Email
     if (field.type === 'email') return 'Please enter an email address.';
@@ -356,13 +356,13 @@ var hasError = function (field) {
   }
 
   // If too short
-  if (validity.tooShort) return 'Please lengthen this text to ' + field.getAttribute('minLength') + ' characters or more. You are currently using ' + field.value.length + ' characters.';
+  if (validity && validity.tooShort) return 'Please lengthen this text to ' + field.getAttribute('minLength') + ' characters or more. You are currently using ' + field.value.length + ' characters.';
 
   // If too long
-  if (validity.tooLong) return 'Please shorten this text to no more than ' + field.getAttribute('maxLength') + ' characters. You are currently using ' + field.value.length + ' characters.';
+  if (validity && validity.tooLong) return 'Please shorten this text to no more than ' + field.getAttribute('maxLength') + ' characters. You are currently using ' + field.value.length + ' characters.';
 
   // If pattern doesn't match
-  if (validity.patternMismatch) {
+  if (validity && validity.patternMismatch) {
 
     // If pattern info is included, return custom error
     if (field.hasAttribute('title')) return field.getAttribute('title');
@@ -373,16 +373,16 @@ var hasError = function (field) {
   }
 
   // If number input isn't a number
-  if (validity.badInput) return 'Please enter a number.';
+  if (validity && validity.badInput) return 'Please enter a number.';
 
   // If a number value doesn't match the step interval
-  if (validity.stepMismatch) return 'Please select a valid value.';
+  if (validity && validity.stepMismatch) return 'Please select a valid value.';
 
   // If a number field is over the max
-  if (validity.rangeOverflow) return 'Please select a value that is no more than ' + field.getAttribute('max') + '.';
+  if (validity && validity.rangeOverflow) return 'Please select a value that is no more than ' + field.getAttribute('max') + '.';
 
   // If a number field is below the min
-  if (validity.rangeUnderflow) return 'Please select a value that is no less than ' + field.getAttribute('min') + '.';
+  if (validity && validity.rangeUnderflow) return 'Please select a value that is no less than ' + field.getAttribute('min') + '.';
 
   // If all else fails, return a generic catchall error
   return 'The value you entered for this field is invalid.';
@@ -391,16 +391,16 @@ var hasError = function (field) {
 
 
 // Show an error message
-var showError = function (field, error) {
+let showError = function (field, error) {
 
   // Add error class to field
   field.classList.add('error');
 
   // If the field is a radio button and part of a group, error all and get the last item in the group
   if (field.type === 'radio' && field.name) {
-    var group = field.form.querySelectorAll('[name="' + field.name + '"]');
+    let group = field.form.querySelectorAll('[name="' + field.name + '"]');
     if (group.length > 0) {
-      for (var i = 0; i < group.length; i++) {
+      for (let i = 0; i < group.length; i++) {
         group[i].classList.add('error');
       }
       field = group[group.length - 1];
@@ -408,19 +408,19 @@ var showError = function (field, error) {
   }
 
   // Get field id or name
-  var id = field.id || field.name;
+  let id = field.id || field.name;
   if (!id) return;
 
   // Check if error message field already exists
   // If not, create one
-  var message = field.form.querySelector('.error-message#error-for-' + id );
+  let message = field.form.querySelector('.error-message#error-for-' + id );
   if (!message) {
     message = document.createElement('div');
     message.className = 'error-message';
     message.id = 'error-for-' + id;
 
     // If the field is a radio button or checkbox, insert error after the label
-    var label;
+    let label;
     if (field.type === 'radio' || field.type ==='checkbox') {
       label = field.form.querySelector('label[for="' + id + '"]') || field.parentNode;
       if (label) {
@@ -449,7 +449,7 @@ var showError = function (field, error) {
 
 
 // Remove the error message
-var removeError = function (field) {
+let removeError = function (field) {
 
   // Remove error class to field
   field.classList.remove('error');
@@ -459,9 +459,9 @@ var removeError = function (field) {
 
   // If the field is a radio button and part of a group, remove error from all and get the last item in the group
   if (field.type === 'radio' && field.name) {
-    var group = field.form.querySelectorAll('[name="' + field.name + '"]');
+    let group = field.form.querySelectorAll('[name="' + field.name + '"]');
     if (group.length > 0) {
-      for (var i = 0; i < group.length; i++) {
+      for (let i = 0; i < group.length; i++) {
         group[i].classList.remove('error');
       }
       field = group[group.length - 1];
@@ -469,12 +469,12 @@ var removeError = function (field) {
   }
 
   // Get field id or name
-  var id = field.id || field.name;
+  let id = field.id || field.name;
   if (!id) return;
 
 
   // Check if an error message is in the DOM
-  var message = field.form.querySelector('.error-message#error-for-' + id + '');
+  let message = field.form.querySelector('.error-message#error-for-' + id + '');
   if (!message) return;
 
   // If so, hide it
@@ -487,12 +487,11 @@ var removeError = function (field) {
 
 // Listen to all blur events
 document.addEventListener('blur', function (event) {
-
   // Only run if the field is in a form to be validated
-  if (!event.target.form.classList.contains('validate')) return;
+  if (event.target.form && !event.target.form.classList.contains('validate')) return;
 
   // Validate the field
-  var error = hasError(event.target);
+  let error = hasError(event.target);
 
   // If there's an error, show it
   if (error) {
@@ -513,12 +512,12 @@ document.addEventListener('submit', function (event) {
   if (!event.target.classList.contains('validate')) return;
 
   // Get all of the form elements
-  var fields = event.target.elements;
+  let fields = event.target.elements;
 
   // Validate each field
   // Store the first field with an error to a variable so we can bring it into focus later
-  var error, hasErrors;
-  for (var i = 0; i < fields.length; i++) {
+  let error, hasErrors;
+  for (let i = 0; i < fields.length; i++) {
     error = hasError(fields[i]);
     if (error) {
       showError(fields[i], error);

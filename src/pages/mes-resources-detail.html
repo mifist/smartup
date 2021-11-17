@@ -5,16 +5,20 @@
 	@@include('./_includes/modules/_banner-slider.html')
 
 
-	<div class="resources-section">
-		<div class="container">
-			<div class="column left-side">
-				  side
+	<article class="resources-section">
+		<div class="container article-container" data-sticky_parent>
+			<div class="column main-content">
+				@@include('./_includes/parts/_single-content.html')
+				@@include('./_includes/parts/_single-inclus.html')
+				@@include('./_includes/parts/_single-vote.html')
+				@@include('./_includes/parts/_single-comments.html')
 			</div>
-			<div class="column right-side">
-				info
-			</div>
+			<aside class="column aside-column" data-sticky_column>
+				@@include('./_includes/parts/_aside-promo.html')
+				@@include('./_includes/parts/_aside-social.html')
+			</aside>
 		</div>
-	</div>
+	</article>
 
 
 </main>

@@ -1,0 +1,45 @@
+<div class="comments-section">
+	<div class="tabs-list">
+
+		<div class="tabs-list__nav">
+			<ul>
+				<li class="tabs-list__nav-item active-tab">
+					<a href="#" data-id="questions">Questions (11)</a>
+				</li>
+				<li class="tabs-list__nav-item">
+					<a href="#" data-id="reviews">Reviews (32)</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- lists body -->
+		<div class="tabs-list__body">
+
+			<div data-id="questions" class="tabs-list__content active-tab">
+				<div class="tab-content-container">
+					<a href="#" data-id="new-questions" class="new-comment-action">POSER UNE QUESTION</a>
+					<!-- forms -->
+					<div data-id="new-questions" class="new-comment-form new-questions">
+						@@include('./_reply-questions.html')
+					</div>
+					<!-- lists -->
+					@@include('./_questions-list.html')
+				</div>
+			</div>
+
+			<div data-id="reviews" class="tabs-list__content">
+				<div class="tab-content-container">
+					<a href="#" data-id="new-reviews" class="new-comment-action">DONNER UNE REVIEW</a>
+					<!-- forms -->
+					<div data-id="new-reviews" class="new-comment-form new-reviews">
+						@@include('./_reply-reviews.html')
+					</div>
+					<!-- lists -->
+					@@include('./_reviews-list.html')
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>

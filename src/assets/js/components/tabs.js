@@ -86,12 +86,12 @@
            elemListAmount = elemList.length > 0 ? elemList.length : 0;
 
          let showing = elemList.filter(':not(.hide-card)').length;
-         console.log({showing});
+         //console.log({showing});
 
          elemList.slice(showing - 1, showing + elemPerPage).removeClass('hide-card');
 
          let nowShowing = elemList.filter(':visible').length;
-         console.log({showing, nowShowing, elemPerPage});
+         //console.log({showing, nowShowing, elemPerPage});
 
          if (nowShowing >= elemListAmount) {
            current.addClass('disabled');
