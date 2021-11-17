@@ -198,6 +198,9 @@
     border-radius: 5px;
     margin-bottom: 19px;
     overflow: hidden;
+    @media screen and (max-width: 480px) {
+      flex-wrap: wrap;
+    }
     .su-form__field {
       margin-bottom: 0;
     }
@@ -214,6 +217,9 @@
     box-sizing: border-box;
     margin: 0 !important;
     width: 100%;
+    @media screen and (max-width: 480px) {
+      flex-wrap: wrap;
+    }
     &.checked {
       background: #F3F3F3;
     }
@@ -237,6 +243,10 @@
       line-height: 17px;
       color: #111111;
       display: block;
+      padding-right: 24px;
+      @media screen and (max-width: 480px) {
+        padding-right: 0;
+      }
       .name {
         font-weight: 600;
         font-size: 14px;
@@ -257,6 +267,12 @@
     .image {
       max-width: max-content;
       display: block;
+      @media screen and (max-width: 480px) {
+        max-width: 100%;
+        margin-top: 12px;
+        flex: 1 0 100%;
+        padding-left: 28px;
+      }
     }
   }
   &__footer {
